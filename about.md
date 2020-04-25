@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Ricardo es un ingeniero hidráulico especializado en modelización computacional y con una fuerte pasión por el mundo de las tecnologías y el análisis de datos.
 
 ### More Information
 
