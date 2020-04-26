@@ -4,12 +4,23 @@ title: About
 permalink: /about/
 ---
 
-Ricardo es un ingeniero hidráulico especializado en modelización computacional y con una fuerte pasión por el mundo de las tecnologías y el análisis de datos.
+![_config.yml](/images/about/me.jpg "_config.yml")
 
-### More Information
+Born in 1990 in Granada, Spain. Currently based on Swindon, United Kingdom. Hydraulic Engineer.
 
-A place to include any other types of information that you'd like to include about yourself.
+### Professional path
 
+I started to work for CH2M (now Jacobs) as an intern during my master and have been working for them as a River Modeller.
+
+### Hobbies
+
+On the artistic side of thing I enjoy drawing and making old style maps. I have origami in my to-do list. I also enjoy coding. And I have been (unsuccessfully) trying to write (in Spanish) some short-stories.
+
+## Drawing
+
+You could see some of my drawings.
+
+<!-- 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[email@domain.com](mailto:email@domain.com) -->
