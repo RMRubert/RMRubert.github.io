@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![_config.yml](/images/about/me.jpg "_config.yml") {style=text-align:center}
+![_config.yml](/images/about/me.jpg "_config.yml")
 
 Born in 1990 in Granada, Spain. Currently based on Swindon, United Kingdom. Hydraulic Engineer.
 
