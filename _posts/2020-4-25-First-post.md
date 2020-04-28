@@ -1,8 +1,8 @@
 ---
 layout: post
 title: You're up and running!
-categories: blog
-
+categories: [blog]
+tags: [hot, summer]
 ---
 
 Este es el primer post de todos. Adelante lorem.
