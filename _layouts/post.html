@@ -22,13 +22,8 @@ layout: default
 	</div>
   
     <div class="tag">
-		{% comment %}
-		=======================
-		The purpose of this snippet is to list all the tags you have in your site.
-		=======================
-		{% endcomment %}
-		{% for tag in tags %}
-			<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+		{% for tag in page.tags %}
+		  <span class="codinfox-tag-mark">{{ tag }}</span>
 		{% endfor %}
 	</div>
 
