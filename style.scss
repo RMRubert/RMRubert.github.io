@@ -284,11 +284,17 @@ footer {
 }
 
 .r-tag-mark{
-    font-size: 75%;
-    padding: 0 .5rem 0 .5rem;
-    border-radius: 5px;
-    background: #e7f2f7;
-    color: #6a9fb5;
+	font-size: 85%;
+	padding: 0 .5rem 0 .5rem;
+	border-radius: 5px;
+	background: #ffe8a1;
+	color: #733d04;
+	font-variant-caps: all-petite-caps;
+	font-weight: bolder;
+}
+
+.r-tag-mark:before {
+   content: "🏷️ ";
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
