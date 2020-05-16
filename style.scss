@@ -294,7 +294,8 @@ footer {
 }
 
 .r-tag-mark:before {
-   content: "🏷️ ";
+   /*content: "🏷️ "; emoji */
+   content: "🏷 "; /* not-emoji*/
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
