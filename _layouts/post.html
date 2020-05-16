@@ -23,7 +23,7 @@ layout: default
   
     <div class="tag">
 		{% for tag in page.tags %}
-		  <span class="codinfox-tag-mark">{{ tag }}</span>
+		  Tags: {{ tag }}<a class="label" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
 	</div>
 
