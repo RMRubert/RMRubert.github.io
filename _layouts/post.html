@@ -22,8 +22,9 @@ layout: default
 	</div>
   
     <div class="tag">
+		Tags: 
 		{% for tag in page.tags %}
-		  Tags: {{ tag }}<a class="label" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+		  <a class="label" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
 	</div>
 
