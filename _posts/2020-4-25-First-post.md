@@ -1,7 +1,8 @@
 ---
 layout: post
 title: You're up and running!
-tags: [hot, summer]
+category: Code
+tags: [R, GIS]
 ---
 
 Este es el primer post de todos. Adelante lorem. 33

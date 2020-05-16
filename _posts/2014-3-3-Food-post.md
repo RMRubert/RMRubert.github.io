@@ -1,9 +1,11 @@
 ---
 layout: post
 title: You're up and running!
-category: Dev
-tags: [web, jekyll]
+category: Food
+tags: [recipe]
 ---
+
+This shall be a food post.
 
 Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 
