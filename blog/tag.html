@@ -1,5 +1,5 @@
 ---
-layout:   blog_index
+layout:   default
 title:    Tag
 ---
 {% comment%}
@@ -13,10 +13,6 @@ Here we generate all the tags.
 {% endfor %}
 
 {% assign rawtags = rawtags | split:'|' | sort %}
-
----
-layout: default
----
 
 {% assign tags = "" %}
 
