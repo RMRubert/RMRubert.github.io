@@ -14,6 +14,10 @@ Here we generate all the tags.
 
 {% assign rawtags = rawtags | split:'|' | sort %}
 
+---
+layout: default
+---
+
 {% assign tags = "" %}
 
 {% for tag in rawtags %}
