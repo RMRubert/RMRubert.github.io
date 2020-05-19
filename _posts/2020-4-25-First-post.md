@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The code post
-category: Code
+category: EN
 tags: [R, GIS]
 ---
 

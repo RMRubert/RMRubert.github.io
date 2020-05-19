@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The food post
-category: Food
+category: ES
 tags: [recipe]
 ---
 
