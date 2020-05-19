@@ -24,7 +24,7 @@ layout: default
     <div class="tag">
 		Tags: 
 		{% for tag in page.tags %}
-		  <a class="r-tag-mark" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+		  <a class="r-tag-mark" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
 	</div>
 
