@@ -13,6 +13,33 @@
 /* BASE RULES */
 /**************/
 
+
+/**
+*** Primary color:
+
+   shade 0 = #011423 = rgb(  1, 20, 35) = rgba(  1, 20, 35,1) = rgb0(0.004,0.078,0.137)
+   shade 1 = #02101B = rgb(  2, 16, 27) = rgba(  2, 16, 27,1) = rgb0(0.008,0.063,0.106)
+   shade 2 = #041B2D = rgb(  4, 27, 45) = rgba(  4, 27, 45,1) = rgb0(0.016,0.106,0.176)
+   shade 3 = #022B4A = rgb(  2, 43, 74) = rgba(  2, 43, 74,1) = rgb0(0.008,0.169,0.29)
+   shade 4 = #05406C = rgb(  5, 64,108) = rgba(  5, 64,108,1) = rgb0(0.02,0.251,0.424)
+
+*** Secondary color (1):
+
+   shade 0 = #362800 = rgb( 54, 40,  0) = rgba( 54, 40,  0,1) = rgb0(0.212,0.157,0)
+   shade 1 = #2A1F00 = rgb( 42, 31,  0) = rgba( 42, 31,  0,1) = rgb0(0.165,0.122,0)
+   shade 2 = #463503 = rgb( 70, 53,  3) = rgba( 70, 53,  3,1) = rgb0(0.275,0.208,0.012)
+   shade 3 = #735600 = rgb(115, 86,  0) = rgba(115, 86,  0,1) = rgb0(0.451,0.337,0)
+   shade 4 = #A87E00 = rgb(168,126,  0) = rgba(168,126,  0,1) = rgb0(0.659,0.494,0)
+
+*** Secondary color (2):
+
+   shade 0 = #360F00 = rgb( 54, 15,  0) = rgba( 54, 15,  0,1) = rgb0(0.212,0.059,0)
+   shade 1 = #2A0C00 = rgb( 42, 12,  0) = rgba( 42, 12,  0,1) = rgb0(0.165,0.047,0)
+   shade 2 = #461603 = rgb( 70, 22,  3) = rgba( 70, 22,  3,1) = rgb0(0.275,0.086,0.012)
+   shade 3 = #732100 = rgb(115, 33,  0) = rgba(115, 33,  0,1) = rgb0(0.451,0.129,0)
+   shade 4 = #A83000 = rgb(168, 48,  0) = rgba(168, 48,  0,1) = rgb0(0.659,0.188,0)
+**/
+
 html {
   font-size: 100%;
 }
@@ -297,8 +324,8 @@ footer {
 	font-size: 85%;
 	padding: 0 .5rem 0 .5rem;
 	border-radius: 5px;
-	background: #ffe8a1;
-	color: #733d04;
+	background: #05406C;
+	color: #A83000;
 	font-variant-caps: all-petite-caps;
 	font-weight: bolder;
 }
