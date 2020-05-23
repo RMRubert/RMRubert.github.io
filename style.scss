@@ -20,7 +20,7 @@ html {
 body {
   background: $white;
   font: 18px/1.4 $helvetica;
-  color: $color2;
+  color: $color5;
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $color2;
+  color: $color4;
   font-weight: bold;
 
   line-height: 1.7;
@@ -122,12 +122,12 @@ img {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $color2;
-  background: $color1;
+  color: $color1;
+  background: $color2;
 }
 ::selection {
-  color: $color2;
-  background: $color1;
+  color: $color1;
+  background: $color2;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -202,7 +202,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $color2;
+  color: $color4;
   font-size: 16px;
 
   @include mobile {
@@ -225,14 +225,14 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $color2;
+    color: $color3;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
       margin: 0 10px;
-      color: $color3;
+      color: $color1;
     }
   }
 }
@@ -243,7 +243,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $color1;
+  border-bottom: 1px solid $color4;
 }
 
 .posts > .post:last-child {
@@ -273,7 +273,7 @@ nav {
 
 .foot-sitemap {
   margin-top: 0px;
-  border-top: 1px solid $color5;
+  border-top: 1px solid $color2;
   border-bottom: 0px;
   font-size: 80%;
   color: $black;
@@ -282,8 +282,8 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid $color5;
-  border-bottom: 1px solid $color5;
+  border-top: 1px solid $color4;
+  border-bottom: 1px solid $color4;
   background-color: $color1;
   text-align: center;
 }
