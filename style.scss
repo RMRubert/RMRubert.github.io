@@ -69,11 +69,11 @@ p {
 }
 
 a {
-  color: $blue;
+  color: $color4;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $color4;
   }
 }
 
@@ -232,7 +232,7 @@ nav {
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      color: $color4;
     }
   }
 }
