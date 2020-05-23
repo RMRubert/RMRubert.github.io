@@ -156,7 +156,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $color1;
+  border-bottom: 1px solid $color4;
 
   @include mobile {
     text-align: center;
@@ -273,7 +273,7 @@ nav {
 
 .foot-sitemap {
   margin-top: 0px;
-  border-top: 1px solid $color4;
+  border-top: 1px solid $color5;
   border-bottom: 0px;
   font-size: 80%;
   color: $color4;
@@ -282,8 +282,8 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid $color4;
-  border-bottom: 1px solid $color4;
+  border-top: 1px solid $color5;
+  border-bottom: 1px solid $color5;
   background-color: $color1;
   text-align: center;
 }
