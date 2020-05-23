@@ -122,12 +122,12 @@ img {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $color1;
-  background: $color2;
+  color: $color3;
+  background: $color1;
 }
 ::selection {
-  color: $color1;
-  background: $color2;
+  color: $color3;
+  background: $color1;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -243,7 +243,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $color2;
+  border-bottom: 1px solid $color4;
 }
 
 .posts > .post:last-child {
