@@ -117,16 +117,16 @@ img {
 
 .date {
   font-style: italic;
-  color: $gray;
+  color: $color4;
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
+  color: $color4;
   background: $color1;
 }
 ::selection {
-  color: $black;
+  color: $color4;
   background: $color1;
 }
 
@@ -202,7 +202,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: $color4;
   font-size: 16px;
 
   @include mobile {
@@ -254,9 +254,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid $color4;
     padding: 0.1em 1em;
-    color: $gray;
+    color: $color4;
     font-size: 22px;
     font-style: italic;
   }
@@ -273,17 +273,17 @@ nav {
 
 .foot-sitemap {
   margin-top: 0px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid $color4;
   border-bottom: 0px;
   font-size: 80%;
-  color: #606060;
+  color: $color4;
 }
 
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid $color4;
+  border-bottom: 1px solid $color4;
   background-color: $color1;
   text-align: center;
 }
@@ -298,7 +298,7 @@ footer {
 	padding: 0 .5rem 0 .5rem;
 	border-radius: 5px;
 	background: $color5;
-	color: #733d04;
+	color: $color4;
 	font-variant-caps: all-petite-caps;
 	font-weight: bolder;
 }
