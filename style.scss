@@ -20,7 +20,7 @@ html {
 body {
   background: $color0;
   font: 18px/1.4 $helvetica;
-  color: $color5;
+  color: $color6;
 }
 
 .container {
@@ -69,7 +69,7 @@ p {
 }
 
 a {
-  color: $color2;
+  color: $color4;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
