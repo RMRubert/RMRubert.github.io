@@ -13,7 +13,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="Logo.svg">
+   sodipodi:docname="Logo_A.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -61,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -111,34 +111,86 @@
        id="path1168-2-6-7-8"
        cx="195.67836"
        cy="324.94565"
-       r="13.455475" />
+       r="13.455475" >
+	   	<animate 
+		attributeName="fill" 
+		attributeType="XML"
+		dur="3.5s"
+		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		keyTimes="0 ; 0.45 ; 0.50 ; 0.55 ; 1"
+		repeatCount="indefinite"
+		/>
+	</circle>
     <circle
        inkscape:label="EU4_Circ"
        r="13.455475"
        cy="257.23126"
        cx="264.98041"
        id="path1168-2-6-7"
-       style="display:inline;fill:#bf4e30;fill-opacity:1;stroke:#443226;stroke-width:8.73125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="display:inline;fill:#bf4e30;fill-opacity:1;stroke:#443226;stroke-width:8.73125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" >
+	   	<animate 
+		attributeName="fill" 
+		attributeType="XML"
+		dur="4s"
+		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		keyTimes="0 ; 0.25 ; 0.30 ; 0.35 ; 1"
+		repeatCount="indefinite"
+		/>	
+	</circle>
     <circle
        inkscape:label="EU3_Circ"
        style="display:inline;fill:#bf4e30;fill-opacity:1;stroke:#443226;stroke-width:8.73125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1168-2-6"
        cx="187.17812"
        cy="240.13139"
-       r="13.455475" />
+       r="13.455475" >
+	   <animate 
+		attributeName="fill" 
+		attributeType="XML"
+		dur="3s"
+		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		keyTimes="0 ; 0.23 ; 0.33 ; 0.43 ; 1"
+		repeatCount="indefinite"
+		/>	
+		<!-- 	
+		from="#bf4e30" 
+		to="#004f2d"
+		dur="0.5s"
+		end="3s"
+		repeatCount="indefinite" 
+		-->  
+	</circle>
     <circle
        inkscape:label="EU2_Circ"
        r="13.455475"
        cy="220.88799"
        cx="138.00053"
        id="path1168-2"
-       style="display:inline;fill:#bf4e30;fill-opacity:1;stroke:#443226;stroke-width:8.73125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="display:inline;fill:#bf4e30;fill-opacity:1;stroke:#443226;stroke-width:8.73125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" >
+	   	<animate 
+		attributeName="fill" 
+		attributeType="XML"
+		dur="2s"
+		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		keyTimes="0 ; 0.13 ; 0.23 ; 0.25 ; 1"
+		repeatCount="indefinite"
+		/>	
+	</circle>
     <circle
        inkscape:label="EU1_Circ"
        style="display:inline;opacity:1;fill:#bf4e30;fill-opacity:1;stroke:#443226;stroke-width:8.73125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1168"
        cx="197.80685"
        cy="189.0667"
-       r="13.455475" />
+       r="13.455475" >
+	   	<animate 
+		attributeName="fill" 
+		attributeType="XML"
+		dur="3s"
+		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		keyTimes="0 ; 0.75 ; 0.83 ; 0.88 ; 1"
+		repeatCount="indefinite"
+		/>	
+	</circle>
   </g>
 </svg>
