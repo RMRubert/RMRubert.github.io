@@ -116,7 +116,7 @@
 		attributeName="fill" 
 		attributeType="XML"
 		dur="3.5s"
-		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		values="#004f2d ; #004f2d  ; #bf4e30 ;#004f2d ; #004f2d"
 		keyTimes="0 ; 0.45 ; 0.50 ; 0.55 ; 1"
 		repeatCount="indefinite"
 		/>
@@ -132,7 +132,7 @@
 		attributeName="fill" 
 		attributeType="XML"
 		dur="4s"
-		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		values="#004f2d ; #004f2d  ; #bf4e30 ;#004f2d ; #004f2d"
 		keyTimes="0 ; 0.25 ; 0.30 ; 0.35 ; 1"
 		repeatCount="indefinite"
 		/>	
@@ -148,7 +148,7 @@
 		attributeName="fill" 
 		attributeType="XML"
 		dur="3s"
-		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		values="#004f2d ; #004f2d  ; #bf4e30 ;#004f2d ; #004f2d"
 		keyTimes="0 ; 0.23 ; 0.33 ; 0.43 ; 1"
 		repeatCount="indefinite"
 		/>	
@@ -171,7 +171,7 @@
 		attributeName="fill" 
 		attributeType="XML"
 		dur="2s"
-		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		values="#004f2d ; #004f2d  ; #bf4e30 ;#004f2d ; #004f2d"
 		keyTimes="0 ; 0.13 ; 0.23 ; 0.25 ; 1"
 		repeatCount="indefinite"
 		/>	
@@ -187,7 +187,7 @@
 		attributeName="fill" 
 		attributeType="XML"
 		dur="3s"
-		values="#bf4e30 ; #bf4e30  ; #004f2d ; #bf4e30 ; #bf4e30"
+		values="#004f2d ; #004f2d  ; #bf4e30 ;#004f2d ; #004f2d"
 		keyTimes="0 ; 0.75 ; 0.83 ; 0.88 ; 1"
 		repeatCount="indefinite"
 		/>	
