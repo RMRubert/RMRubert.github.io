@@ -6,11 +6,18 @@ permalink: /about/
 
 ![_config.yml](/images/about/me.jpg "_config.yml"){: .center-image }
 
-Born in 1990 in Granada, Spain. Currently based on Swindon, United Kingdom. Hydraulic Engineer.
+# About me
 
-# Professional path
+Welcome to my blog! My name is Ricardo Montero. Born in Granada, Spain where I lived 23 years and graduated as a Civil Engineer. Since then, I specialised in computational hydraulics and I have been living on several places (France, Switzerland, Germany), nowadays I lived at Swindon, UK working as a hydraulic engineer. You can have more info about my professional path on ![Linkedin](https://www.linkedin.com/in/ricmonrub/) or my online CV.
 
-I started to work for CH2M (now Jacobs) as an intern during my master and have been working for them as a River Modeller.
+
+# About the blog
+
+
+This blog was born out of my desire to learn how to create (and experiment with) static web pages. In the past I have had blogs whose content is basically a compendium of notes, notes, thoughts, etc.. Maybe some of you can remember my first blog hosted on MyOpera whose main content was the notes from my university classes.
+
+Like the previous blogs, the kind of content one can expect is similar to what one might find in my "Desktop Notebook". Fortunately, this blog allows you to see the content organized by ![tags]({{ site.baseurl }}/tag/) and without the doodles in the margins (although some of them are pretty cool!). 
+
 
 # Hobbies
 
