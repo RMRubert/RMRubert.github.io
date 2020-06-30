@@ -13,6 +13,8 @@ This blog post is to announce three new UDL (User Defined Languages) with a Dark
 
 Check the [GitHub repository](https://github.com/RMRubert/Notepad-UDL){:target="_blank"} if you are interested in downloading them.
 
-Flood Modeller UDL file is based on my previous dark scheme.
-Tuflow UDL file is based on a modified version of [this file](https://wiki.tuflow.com/index.php?title=NotepadPlusPlus_Highlighting){:target="_blank"}.
-Markdown UDL file is based on a tweaked version of the [duotone markdown UDL file](https://github.com/webketje/notepad-plus-plus-duotone-dark-theme/blob/master/userDefineLangs/userDefinedLang-markdown.xml){:target="_blank"}. 
+----
+
+* Flood Modeller UDL file is based on my previous dark scheme.
+* Tuflow UDL file is based on a modified version of [this file](https://wiki.tuflow.com/index.php?title=NotepadPlusPlus_Highlighting){:target="_blank"}.
+* Markdown UDL file is based on a tweaked version of the [duotone markdown UDL file](https://github.com/webketje/notepad-plus-plus-duotone-dark-theme/blob/master/userDefineLangs/userDefinedLang-markdown.xml){:target="_blank"}. 
