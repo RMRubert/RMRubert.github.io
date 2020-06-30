@@ -14,9 +14,11 @@ Welcome to my blog! My name is Ricardo Montero. Born in Granada, Spain where I l
 # About the blog
 
 
-This blog was born out of my desire to learn how to create (and experiment with) static web pages. In the past I have had blogs whose content is basically a compendium of notes, notes, thoughts, etc.. Maybe some of you can remember my first blog hosted on MyOpera whose main content was the notes from my university classes.
+This blog was born out of my desire to learn how to create (and experiment with) static web pages. In the past I have had blogs whose content is basically a compendium of notes, sketches, thoughts, etc... Those who knew me whilst I was studying might remember my first blog hosted on MyOpera.
 
 Like the previous blogs, the kind of content one can expect is similar to what one might find in my "Desktop Notebook". Fortunately, this blog allows you to see the content organized by [tags]({{ site.baseurl }}/tag/) and without the doodles in the margins (although some of them are pretty cool!). 
+
+The blog does not have a language, although probably most entries would be on English. It might be that some are in Spanish, specially if I am talking about creative writing. 
 
 
 # Hobbies
