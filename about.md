@@ -23,7 +23,7 @@ The blog does not have a language, although probably most entries would be on En
 
 # Hobbies
 
-On the artistic side of thing I enjoy drawing and making [old style maps]({{ site.baseurl }}/tag/Maps). I have origami in my to-do list. I also enjoy coding. And I have been (unsuccessfully) trying to write (in Spanish) some short-stories.
+On the artistic side of thing I enjoy drawing and making [old style maps]({{ site.baseurl }}/tag/#Maps). I have origami in my to-do list. I also enjoy coding. And I have been (unsuccessfully) trying to write (in Spanish) some short-stories.
 
 ## Drawing
 
