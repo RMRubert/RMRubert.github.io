@@ -5,7 +5,7 @@ category: EN
 tags: [Solarized, Computational Hydraulics]
 ---
 
-![_config.yml](/images/Posts/2020/2020-06-30_Image1.png "_config.yml"){: .center-image }
+![Notepad++ Screenshot](/images/Posts/2020/2020-06-30_Image1.png){: .center-image }
 
 Those who work with me know that I am a fan of dark themes on applications. However, until today I used to use a different dark scheme for each application/language. Weeks ago I discovered Solarized and fell in love with it, to the point that not only have I changed all my others skins to Solarized but also I have started to create them following Solarized colour scheme.
 

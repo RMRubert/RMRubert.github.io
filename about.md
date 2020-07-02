@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![_config.yml](/images/about/me.jpg "_config.yml"){: .center-image }
+![Picture of me looking awesome](/images/about/me.jpg){: .center-image }
 
 # About me
 
