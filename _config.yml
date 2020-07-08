@@ -15,6 +15,9 @@ avatar: https://raw.githubusercontent.com/RMRubert/RMRubert.github.io/master/ima
 # Flags below are optional
 #
 
+# Separator
+excerpt_separator: <!-- more -->
+
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
