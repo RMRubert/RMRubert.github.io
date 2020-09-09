@@ -1,9 +1,17 @@
 
+.CV-HEAD{
+  width: 100%,
+  position:relative;
+}
+
 .CV-PHOTO {
+  width: 25%;
   display: inline-block;
-  height: 200px;
+  border: 1px solid red;
 }
 
 .CV-INTRO {
+  width: 75%,
   display: inline-block;
+  border: 1px solid green;
 }
