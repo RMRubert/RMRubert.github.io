@@ -1,0 +1,24 @@
+
+/************/
+/* CV RULES */
+/************/
+
+
+.CV-HEAD { 
+  width: 100%;
+  position: relative;
+  border: 1px solid orange;
+}
+
+
+.CV-PHOTO {
+  width: 25%;
+  display: inline-block;
+  border: 1px solid red;
+}
+
+.CV-INTRO {
+  width: 75%,
+  display: inline-block;
+  border: 1px solid green;
+}
