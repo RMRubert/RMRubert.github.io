@@ -25,3 +25,26 @@
   min-height: 200px;
   padding: 0px 0px 0px 10px;
 }
+
+
+.CV-BODY { 
+  width: 100%;
+  position: relative;
+  border: 1px solid orange;
+}
+
+.CV-MAIN {
+  width: 72%;
+  display: inline-flex;
+  border: 1px solid red;
+  min-height: 200px;
+  float: left;
+}
+
+.CV-LATBAR {
+  width: 25%;
+  display: inline-flex;
+  border: 1px solid green;
+  min-height: 200px;
+  padding: 0px 0px 0px 10px;
+}
