@@ -3,7 +3,6 @@
 /* CV RULES */
 /************/
 
-
 .CV-HEAD { 
   width: 100%;
   position: relative;
@@ -13,12 +12,16 @@
 
 .CV-PHOTO {
   width: 25%;
-  display: inline-block;
+  display: inline-flex;
   border: 1px solid red;
+  min-height: 200px;
+  float: left;
 }
 
 .CV-INTRO {
-  width: 75%,
-  display: inline-block;
+  width: 72%;
+  display: inline-flex;
   border: 1px solid green;
+  min-height: 200px;
+  padding: 0px 0px 0px 10px;
 }
