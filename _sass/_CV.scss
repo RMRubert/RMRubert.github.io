@@ -5,44 +5,47 @@
 
 .CV-HEAD { 
   width: 100%;
-  position: relative;
   border: 1px solid orange;
+  display: inline-block;
 }
 
 
 .CV-PHOTO {
   width: 25%;
-  display: inline-flex;
+  display: inline-block;
   border: 1px solid red;
   min-height: 200px;
-  float: left;
+  text-align: center;
+  vertical-align: middle;
+  
 }
 
 .CV-INTRO {
   width: 72%;
-  display: inline-flex;
+  display: inline-block;
   border: 1px solid green;
   min-height: 200px;
   padding: 0px 0px 0px 10px;
+  vertical-align: middle;
 }
 
 
 .CV-BODY { 
   width: 100%;
-  position: relative;
   border: 1px solid orange;
+  display: inline-block;
 }
 
 .CV-MAIN {
   width: 72%;
-  display: inline-flex;
+  display: inline-block;
   border: 1px solid red;
   float: left;
 }
 
 .CV-LATBAR {
   width: 25%;
-  display: inline-flex;
+  display: inline-block;
   border: 1px solid green;
   padding: 0px 0px 0px 10px;
 }
