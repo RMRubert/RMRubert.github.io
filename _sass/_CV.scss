@@ -69,7 +69,11 @@
 
 .CV-CR-LOGO { 
   grid-area: CV-CR-LOGO;
-  border: 1px solid green; 
+  border: 1px solid green;
+  min-height: 75px;
+  text-align: center;
+  align-items: center;
+  display: flex;  
 }
 
 .CV-CR-CV-NAME {
