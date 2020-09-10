@@ -55,3 +55,22 @@
   border: 1px solid cyan;
   float: left;
 }
+
+.CV-CR-grid-container {
+  display: grid;
+  grid-template-columns: 0.3fr 1.7fr 1fr 1fr;
+  grid-template-rows: 0.3fr 0.3fr 2.4fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "CV-CR-LOGO CV-CR-CV-NAME . ."
+    "CV-CR-TOPINFO CV-CR-TOPINFO . ."
+    "CV-CR-DESCRIPTION CV-CR-DESCRIPTION . .";
+}
+
+.CV-CR-LOGO { grid-area: CV-CR-LOGO;border: 1px solid green; }
+
+.CV-CR-CV-NAME { grid-area: CV-CR-CV-NAME;border: 1px solid yellow; }
+
+.CV-CR-TOPINFO { grid-area: CV-CR-TOPINFO;border: 1px solid pink; }
+
+.CV-CR-DESCRIPTION { grid-area: CV-CR-DESCRIPTION;border: 1px solid white; }
