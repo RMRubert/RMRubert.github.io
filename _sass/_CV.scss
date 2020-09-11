@@ -71,6 +71,11 @@
   display: flex;  
 }
 
+img.CV-LOGO {
+  border:none !important; 
+}
+
+
 .CV-MAIN-CV-NAME {
   grid-area: CV-MAIN-CV-NAME;
   border: 1px solid yellow; 
@@ -83,14 +88,14 @@
   font-size: larger;
 }
 .CV-MAIN-CV-NAME-POST {
-
+	font-style: italic;
 }
 
 
 .CV-MAIN-TOPINFO {
  grid-area: CV-MAIN-TOPINFO;
  border: 1px solid pink;
- line-height: 30px;
+ padding: 0px 20px 0px 20px
 }
 
 .CV-MAIN-CV-NAME-TIME {
@@ -114,6 +119,7 @@
 .CV-MAIN-DESCRIPTION {
   grid-area: CV-MAIN-DESCRIPTION;
   border: 1px solid white;
+  padding: 0px 20px 0px 20px;
 }
 
 
@@ -122,124 +128,3 @@
 	border: 1px solid green;
  }
 
-
-
-/*
-.CV-HEAD { 
-  width: 100%;
-  border: 1px solid orange;
-  display: inline-block;
-}
-
-
-.CV-PHOTO {
-  width: 25%;
-  display: inline-block;
-  border: 1px solid red;
-  min-height: 200px;
-  text-align: center;
-  vertical-align: middle;
-  
-}
-
-.CV-INTRO {
-  width: 72%;
-  display: inline-block;
-  border: 1px solid green;
-  min-height: 200px;
-  padding: 0px 0px 0px 10px;
-  vertical-align: middle;
-}
-
-
-.CV-BODY { 
-  width: 100%;
-  border: 1px solid orange;
-  display: inline-block;
-}
-
-.CV-MAIN {
-  width: 72%;
-  display: inline-block;
-  border: 1px solid red;
-  float: left;
-}
-
-.CV-LATBAR {
-  width: 25%;
-  display: inline-block;
-  border: 1px solid green;
-  padding: 0px 0px 0px 10px;
-}
-
-.CV-MAIN-BLOCK {
-  width: 100%;
-  border: 1px solid cyan;
-  float: left;
-}
-
-.CV-CR-grid-container {
-  display: grid;
-  grid-template-columns: 0.3fr 1.7fr;
-  grid-template-rows: 0.3fr 0.3fr 2.4fr;
-  gap: 1px 1px;
-  grid-template-areas:
-    "CV-CR-LOGO CV-CR-CV-NAME"
-    "CV-CR-TOPINFO CV-CR-TOPINFO"
-    "CV-CR-DESCRIPTION CV-CR-DESCRIPTION";
-}
-
-.CV-CR-LOGO { 
-  grid-area: CV-CR-LOGO;
-  border: 1px solid green;
-  min-height: 75px;
-  text-align: center;
-  align-items: center;
-  display: flex;  
-}
-
-.CV-CR-CV-NAME {
-  grid-area: CV-CR-CV-NAME;
-  border: 1px solid yellow; 
-  line-height: 30px;
-}
-
-.CV-CR-CV-NAME-COMP {
-  color: $color2;
-  font-weight: bold;
-  font-size: larger;
-}
-.CV-CR-CV-NAME-POST {
-
-}
-
-
-.CV-CR-TOPINFO {
- grid-area: CV-CR-TOPINFO;
- border: 1px solid pink;
- line-height: 30px;
-}
-
-.CV-CR-CV-NAME-TIME {
-  font-style: italic;
-}
-
-.CV-CR-CV-NAME-TIME:before {
-   content: "📅 "; 
-   
-}
-
-.CV-CR-CV-NAME-LOCT {
-
-}
-
-.CV-CR-CV-NAME-LOCT:before {
-   content: "🗺️ "; 
-   
-}
-
-.CV-CR-DESCRIPTION {
-  grid-area: CV-CR-DESCRIPTION;
-  border: 1px solid white;
-}
- */
