@@ -20,16 +20,20 @@
  }
 .CV-TITLE-NAME { 
 	font-size:	x-large;
+	font-weight:  bold;
+	font-variant:  small-caps;
 	color: $color2;
  }
  .CV-TITLE-SUBT { 
 	font-size:	large;
 	font-style: italic;
+	color: $color4;
  }
  
 .CV-PHOTO { 
 	grid-area: CV-PHOTO;
 	padding: 1px 1px 1px 1px;
+	margin: auto;
 	width: 100%;
     height: auto;
 	border: 1px solid orange;
