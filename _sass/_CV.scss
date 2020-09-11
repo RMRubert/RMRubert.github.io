@@ -23,12 +23,16 @@
 	font-size:	x-large;
 	font-weight:  bold;
 	font-variant:  small-caps;
-	color: $color5;
+	color: $color2;
  }
  .CV-TITLE-SUBT { 
 	font-size:	large;
 	font-style: italic;
 	color: $color4;
+ }
+ 
+ .CV-MAIN-SEP02{
+	border-top: 2px solid $color3;
  }
  
 .CV-PHOTO { 
@@ -68,6 +72,7 @@
   text-align: center;
   align-items: center;
   display: flex;
+  padding: 0px 10px 0px 0px;
   /* border: 1px solid red; */
 }
 
@@ -84,7 +89,7 @@ img.CV-LOGO {
 }
 
 .CV-MAIN-CV-NAME-COMP {
-  color: $color2;
+  color: $color5;
   font-weight: bold;
   font-size: larger;
 }
