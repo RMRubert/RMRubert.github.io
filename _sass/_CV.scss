@@ -79,25 +79,39 @@
 .CV-CR-CV-NAME {
   grid-area: CV-CR-CV-NAME;
   border: 1px solid yellow; 
+  line-height: 12px;
 }
 
 .CV-CR-CV-NAME-COMP {
   color: $color2;
   font-weight: bold;
+  font-size: larger;
 }
 .CV-CR-CV-NAME-POST {
 
 }
+
 .CV-CR-CV-NAME-TIME {
   font-style: italic;
 }
+
+.CV-CR-CV-NAME-TIME:before {
+   content: "📅 "; /* emoji */
+   
+}
+
 .CV-CR-CV-NAME-LOCT {
 
 }
 
+.CV-CR-CV-NAME-LOCT:before {
+   content: "🗺️ "; /* emoji */
+   
+}
 .CV-CR-TOPINFO {
  grid-area: CV-CR-TOPINFO;
  border: 1px solid pink;
+ line-height: 12px;
 }
 
 .CV-CR-DESCRIPTION {
