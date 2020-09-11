@@ -57,7 +57,7 @@
   gap: 1px 1px;
   grid-template-areas:
     "CV-MAIN-CV-NAME CV-MAIN-CV-NAME CV-MAIN-LOGO"
-	". CV-MAIN-INFO CV-MAIN-LOGO"
+	". CV-MAIN-TOPINFOINFO CV-MAIN-LOGO"
     ". CV-MAIN-DESCRIPTION CV-MAIN-DESCRIPTION";
 }
 
@@ -94,7 +94,7 @@ img.CV-LOGO {
 
 .CV-MAIN-TOPINFO {
  grid-area: CV-MAIN-TOPINFO;
- padding: 0px 20px 0px 20px
+ border: 1px solid orange;
 }
 
 .CV-MAIN-CV-NAME-TIME {
