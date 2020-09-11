@@ -6,24 +6,33 @@
 .CV-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 150px 250px 900px;
   gap: 1px 1px;
   grid-template-areas:
     "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
     "CV-PHOTO CV-INTRO CV-INTRO CV-INTRO CV-INTRO"
-    "CV-MAIN CV-MAIN CV-MAIN CV-MAIN CV-LATERAL"
     "CV-MAIN CV-MAIN CV-MAIN CV-MAIN CV-LATERAL";
 }
-
-.CV-PHOTO { 
-	grid-area: CV-PHOTO;
-	border: 1px solid orange;
- }
 
 .CV-TITLE { 
 	grid-area: CV-TITLE;
 	border: 1px solid black;
  }
+.CV-TITLE-NAME { 
+	font-size:	x-large;
+	color: $color2;
+ }
+ .CV-TITLE-SUBT { 
+	font-size:	large;
+	font-style: italic;
+ }
+ 
+.CV-PHOTO { 
+	grid-area: CV-PHOTO;
+	border: 1px solid orange;
+ }
+
+
 
 .CV-INTRO { 
 	grid-area: CV-INTRO;
