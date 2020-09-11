@@ -53,20 +53,23 @@
 .CV-MAIN-grid-container {
   display: grid;
   grid-template-columns: 0.3fr 1.7fr;
-  grid-template-rows: 0.3fr 0.3fr 2.4fr;
+  grid-template-rows: 0.3fr  auto;
   gap: 1px 1px;
   grid-template-areas:
     "CV-MAIN-LOGO CV-MAIN-CV-NAME"
-    "CV-MAIN-TOPINFO CV-MAIN-TOPINFO"
     "CV-MAIN-DESCRIPTION CV-MAIN-DESCRIPTION";
 }
 
 .CV-MAIN-LOGO { 
   grid-area: CV-MAIN-LOGO;
-  min-height: 75px;
+  width: 100px;
+  height: auto;
   text-align: center;
   align-items: center;
-  display: flex;  
+  display: flex;
+  position:  relative;
+  right: 120px;  
+  border: 1px solid red;
 }
 
 img.CV-LOGO {
@@ -77,6 +80,7 @@ img.CV-LOGO {
 .CV-MAIN-CV-NAME {
   grid-area: CV-MAIN-CV-NAME;
   line-height: 30px;
+  border: 1px solid blue;
 }
 
 .CV-MAIN-CV-NAME-COMP {
