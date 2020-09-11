@@ -17,7 +17,7 @@
 
 .CV-TITLE { 
 	grid-area: CV-TITLE;
-	border: 1px solid black;
+
  }
 .CV-TITLE-NAME { 
 	font-size:	x-large;
@@ -37,14 +37,12 @@
 	margin: auto;
 	width: 100%;
     height: auto;
-	border: 1px solid orange;
  }
 
 .CV-INTRO { 
 	grid-area: CV-INTRO;
 	padding: 3px 3px 3px 3px;
 	margin: auto;
-	border: 1px solid blue;
  }
 
 .CV-MAIN { 
@@ -65,7 +63,6 @@
 
 .CV-MAIN-LOGO { 
   grid-area: CV-MAIN-LOGO;
-  border: 1px solid green;
   min-height: 75px;
   text-align: center;
   align-items: center;
@@ -79,7 +76,6 @@ img.CV-LOGO {
 
 .CV-MAIN-CV-NAME {
   grid-area: CV-MAIN-CV-NAME;
-  border: 1px solid yellow; 
   line-height: 30px;
 }
 
@@ -95,7 +91,6 @@ img.CV-LOGO {
 
 .CV-MAIN-TOPINFO {
  grid-area: CV-MAIN-TOPINFO;
- border: 1px solid pink;
  padding: 0px 20px 0px 20px
 }
 
