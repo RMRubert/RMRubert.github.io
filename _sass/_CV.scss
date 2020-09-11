@@ -6,7 +6,7 @@
 .CV-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 150px 250px 900px;
+  grid-template-rows: auto auto auto;
   gap: 1px 1px;
   grid-template-areas:
     "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
@@ -29,13 +29,16 @@
  
 .CV-PHOTO { 
 	grid-area: CV-PHOTO;
+	padding: 1px 1px 1px 1px;
+	width: 100%;
+    height: auto;
 	border: 1px solid orange;
  }
 
-
-
 .CV-INTRO { 
 	grid-area: CV-INTRO;
+	padding: 3px 3px 3px 3px;
+	margin: auto;
 	border: 1px solid blue;
  }
 
