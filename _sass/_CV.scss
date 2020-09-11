@@ -23,7 +23,7 @@
 	font-size:	x-large;
 	font-weight:  bold;
 	font-variant:  small-caps;
-	color: $color2;
+	color: $color5;
  }
  .CV-TITLE-SUBT { 
 	font-size:	large;
@@ -68,7 +68,7 @@
   text-align: center;
   align-items: center;
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 img.CV-LOGO {
@@ -79,7 +79,8 @@ img.CV-LOGO {
 .CV-MAIN-CV-NAME {
   grid-area: CV-MAIN-CV-NAME;
   line-height: 30px;
-  border: 1px solid blue;
+  padding: 0px 0px 0px 5px;
+  /* border: 1px solid blue;*/
 }
 
 .CV-MAIN-CV-NAME-COMP {
@@ -94,7 +95,7 @@ img.CV-LOGO {
 
 .CV-MAIN-TOPINFO {
  grid-area: CV-MAIN-TOPINFO;
- border: 1px solid orange;
+ /* border: 1px solid orange; */
 }
 
 .CV-MAIN-CV-NAME-TIME {
