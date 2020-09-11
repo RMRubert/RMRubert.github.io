@@ -3,6 +3,46 @@
 /* CV RULES */
 /************/
 
+.CV-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
+    "CV-PHOTO CV-INTRO CV-INTRO CV-INTRO CV-INTRO"
+    "CV-MAIN CV-MAIN CV-MAIN CV-MAIN CV-LATERAL"
+    "CV-MAIN CV-MAIN CV-MAIN CV-MAIN CV-LATERAL";
+}
+
+.CV-PHOTO { 
+	grid-area: CV-PHOTO;
+	border: 1px solid orange;
+ }
+
+.CV-TITLE { 
+	grid-area: CV-TITLE;
+	border: 1px solid black;
+ }
+
+.CV-INTRO { 
+	grid-area: CV-INTRO;
+	border: 1px solid blue;
+ }
+
+.CV-MAIN { 
+	grid-area: CV-MAIN;
+	border: 1px solid brown;
+ }
+
+.CV-LATERAL { 
+	grid-area: CV-LATERAL;
+	border: 1px solid green;
+ }
+
+
+
+/*
 .CV-HEAD { 
   width: 100%;
   border: 1px solid orange;
@@ -103,7 +143,7 @@
 }
 
 .CV-CR-CV-NAME-TIME:before {
-   content: "📅 "; /* emoji */
+   content: "📅 "; 
    
 }
 
@@ -112,7 +152,7 @@
 }
 
 .CV-CR-CV-NAME-LOCT:before {
-   content: "🗺️ "; /* emoji */
+   content: "🗺️ "; 
    
 }
 
@@ -120,3 +160,4 @@
   grid-area: CV-CR-DESCRIPTION;
   border: 1px solid white;
 }
+ */
