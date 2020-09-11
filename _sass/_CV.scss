@@ -17,6 +17,7 @@
 
 .CV-TITLE { 
 	grid-area: CV-TITLE;
+	border-bottom: 2px solid $color3;
 
  }
 .CV-TITLE-NAME { 
@@ -28,12 +29,8 @@
  .CV-TITLE-SUBT { 
 	font-size:	large;
 	font-style: italic;
-	color: $color4;
  }
  
- .CV-MAIN-SEP02{
-	border-top: 2px solid $color3;
- }
  
 .CV-PHOTO { 
 	grid-area: CV-PHOTO;
@@ -89,7 +86,7 @@ img.CV-LOGO {
 }
 
 .CV-MAIN-CV-NAME-COMP {
-  color: $color5;
+  color: $color4;
   font-weight: bold;
   font-size: larger;
 }
