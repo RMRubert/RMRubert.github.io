@@ -51,6 +51,72 @@
 	border: 1px solid brown;
  }
 
+.CV-MAIN-grid-container {
+  display: grid;
+  grid-template-columns: 0.3fr 1.7fr;
+  grid-template-rows: 0.3fr 0.3fr 2.4fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "CV-MAIN-LOGO CV-MAIN-CV-NAME"
+    "CV-MAIN-TOPINFO CV-MAIN-TOPINFO"
+    "CV-MAIN-DESCRIPTION CV-MAIN-DESCRIPTION";
+}
+
+.CV-MAIN-LOGO { 
+  grid-area: CV-MAIN-LOGO;
+  border: 1px solid green;
+  min-height: 75px;
+  text-align: center;
+  align-items: center;
+  display: flex;  
+}
+
+.CV-MAIN-CV-NAME {
+  grid-area: CV-MAIN-CV-NAME;
+  border: 1px solid yellow; 
+  line-height: 30px;
+}
+
+.CV-MAIN-CV-NAME-COMP {
+  color: $color2;
+  font-weight: bold;
+  font-size: larger;
+}
+.CV-MAIN-CV-NAME-POST {
+
+}
+
+
+.CV-MAIN-TOPINFO {
+ grid-area: CV-MAIN-TOPINFO;
+ border: 1px solid pink;
+ line-height: 30px;
+}
+
+.CV-MAIN-CV-NAME-TIME {
+  font-style: italic;
+}
+
+.CV-MAIN-CV-NAME-TIME:before {
+   content: "📅 "; 
+   
+}
+
+.CV-MAIN-CV-NAME-LOCT {
+
+}
+
+.CV-MAIN-CV-NAME-LOCT:before {
+   content: "🗺️ "; 
+   
+}
+
+.CV-MAIN-DESCRIPTION {
+  grid-area: CV-MAIN-DESCRIPTION;
+  border: 1px solid white;
+}
+
+
 .CV-LATERAL { 
 	grid-area: CV-LATERAL;
 	border: 1px solid green;
