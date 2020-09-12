@@ -11,7 +11,7 @@
   grid-template-areas:
     "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
     "CV-PHOTO CV-INTRO CV-INTRO CV-INTRO CV-INTRO"
-    "CV-MAIN CV-MAIN CV-MAIN CV-MAIN CV-LATERAL";
+    "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-LATERAL";
 	padding-left: 5px;
 }
 
@@ -31,8 +31,11 @@
 	font-style: italic;
  }
  
+ .CV-INTRO { 
+	border-bottom: 2px solid $color3;
+ }
  
-.CV-PHOTO { 
+.CV-INTRO-PHOTO { 
 	grid-area: CV-PHOTO;
 	padding: 1px 1px 1px 1px;
 	margin: auto;
@@ -40,30 +43,35 @@
     height: auto;
  }
 
-.CV-INTRO { 
+.CV-INTRO-TEXT { 
 	grid-area: CV-INTRO;
 	padding: 3px 3px 3px 3px;
 	margin: auto;
  }
 
-.CV-MAIN { 
-	grid-area: CV-MAIN;
-
+.CV-BOT-MAIN { 
+	grid-area: CV-BOT-MAIN;
  }
+ 
+ .CV-BOT-MAIN-SECT{
+	border-bottom: 1px solid $color3;
+ }
+ 
 
-.CV-MAIN-grid-container {
-  display: grid;
-  grid-template-columns: 0.1fr 1.7fr 0.3fr;
-  grid-template-rows: 0.1fr 0.3fr auto;
-  gap: 1px 1px;
-  grid-template-areas:
-    "CV-MAIN-CV-NAME CV-MAIN-CV-NAME CV-MAIN-LOGO"
-	". CV-MAIN-TOPINFO CV-MAIN-LOGO"
-    ". CV-MAIN-DESCRIPTION CV-MAIN-DESCRIPTION";
+.CV-BOT-MAIN-GRIDC {
+	display: grid;
+	grid-template-columns: 0.1fr 1.7fr 0.3fr;
+	grid-template-rows: 0.1fr 0.3fr auto;
+	gap: 1px 1px;
+	grid-template-areas:
+		"CV-BOT-MAIN-GC-NAME CV-BOT-MAIN-GC-NAME CV-BOT-MAIN-LOGO"
+		". CV-BOT-MAIN-GC-TOPINFO CV-BOT-MAIN-LOGO"
+		". CV-BOT-MAIN-GC-DESCRIPTION CV-BOT-MAIN-GC-DESCRIPTION";
+	border-bottom: 1px solid $color4;
 }
 
-.CV-MAIN-LOGO { 
-  grid-area: CV-MAIN-LOGO;
+.CV-BOT-MAIN-LOGO { 
+  grid-area: CV-BOT-MAIN-LOGO;
   width: 100px;
   height: auto;
   text-align: center;
@@ -78,57 +86,54 @@ img.CV-LOGO {
 }
 
 
-.CV-MAIN-CV-NAME {
-  grid-area: CV-MAIN-CV-NAME;
+.CV-BOT-MAIN-GC-NAME {
+  grid-area: CV-BOT-MAIN-GC-NAME;
   line-height: 30px;
   padding: 0px 0px 0px 5px;
   /* border: 1px solid blue;*/
 }
 
-.CV-MAIN-CV-NAME-COMP {
+.CV-BOT-MAIN-GC-NAME-COMP {
   color: $color4;
   font-weight: bold;
   font-size: larger;
 }
-.CV-MAIN-CV-NAME-POST {
+.CV-BOT-MAIN-GC-NAME-POST {
 	font-style: italic;
 }
 
 
-.CV-MAIN-TOPINFO {
- grid-area: CV-MAIN-TOPINFO;
+.CV-BOT-MAIN-GC-TOPINFO {
+ grid-area: CV-BOT-MAIN-GC-TOPINFO;
  /* border: 1px solid orange; */
 }
 
-.CV-MAIN-CV-NAME-TIME {
+.CV-BOT-MAIN-GC-NAME-TIME {
   font-style: italic;
 }
 
-.CV-MAIN-CV-NAME-TIME:before {
+.CV-BOT-MAIN-GC-NAME-TIME:before {
    content: "📅 "; 
    
 }
 
-.CV-MAIN-CV-NAME-LOCT {
+.CV-BOT-MAIN-GC-NAME-LOCT {
 
 }
 
-.CV-MAIN-CV-NAME-LOCT:before {
+.CV-BOT-MAIN-GC-NAME-LOCT:before {
    content: "🗺️ "; 
    
 }
 
-.CV-MAIN-DESCRIPTION {
-  grid-area: CV-MAIN-DESCRIPTION;
+.CV-BOT-MAIN-GC-DESCRIPTION {
+  grid-area: CV-BOT-MAIN-GC-DESCRIPTION;
   padding: 0px 10px 0px 0px;
 }
 
-.CV-MAIN-SEP01 {
-	border-top: 1px solid $color1;
-}
 
 
-.CV-LATERAL { 
+.CV-BOT-LAT { 
 	grid-area: CV-LATERAL;
 	border: 1px solid green;
  }
