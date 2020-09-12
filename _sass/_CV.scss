@@ -12,7 +12,7 @@
     "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
 	"CV-SEP CV-SEP CV-SEP CV-SEP CV-SEP"
     "CV-INTRO-PHOTO CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT"
-	"CV-SEP CV-SEP CV-SEP CV-SEP CV-SEP"
+	"CV-SEP1 CV-SEP1 CV-SEP1 CV-SEP1 CV-SEP1"
     "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-LAT";
 	padding-left: 5px;
 	
@@ -24,6 +24,11 @@
  
  .CV-SEP {
 	grid-area: CV-SEP;
+	border-bottom: 2px solid $color3;
+ }
+ 
+  .CV-SEP1 {
+	grid-area: CV-SEP1;
 	border-bottom: 2px solid $color3;
  }
  
