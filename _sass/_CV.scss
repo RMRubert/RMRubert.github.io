@@ -6,13 +6,15 @@
 .CV-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
+  line-height: normal;
   gap: 1px 1px;
   grid-template-areas:
     "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
+	"CV-SEP CV-SEP CV-SEP CV-SEP CV-SEP"
     "CV-INTRO-PHOTO CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT"
     "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-LAT";
 	padding-left: 5px;
+	
 }
 
 .CV-TITLE { 
@@ -30,6 +32,7 @@
 	font-variant:  small-caps;
 	color: $color2;
  }
+ 
  .CV-TITLE-SUBT { 
 	font-size:	large;
 	font-style: italic;
