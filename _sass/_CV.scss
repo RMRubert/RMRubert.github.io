@@ -154,15 +154,17 @@ img.CV-LOGO {
 }
 
 .CV-tooltip .CV-tiptext {
-	visibility: hidden;
-	font-size: medium;
-	width: 500px;
-	background-color: $color4;
-	color: $color1;
-	text-align: left;
-	border-radius: 5px;
-	padding: 10px 10px 10px 10px;
+    visibility: hidden;
+    width: 500px;
+    background-color: $color4;
+    color: $color2;
+    text-align: left;
+    border-radius: 3px;
+    padding: 6px 0;
+    position: absolute;
     z-index: 1;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
 }
 .CV-tooltip .CV-tiptext::after {
     content: "";
