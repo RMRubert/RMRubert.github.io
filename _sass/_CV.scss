@@ -61,6 +61,7 @@
 
 .CV-BOT-MAIN { 
 	grid-area: CV-BOT-MAIN;
+	border-right: 1px solid $color3;
  }
  
  .CV-BOT-MAIN-SECT{
@@ -178,8 +179,19 @@ img.CV-LOGO {
 .CV-tooltip:hover .CV-tiptext {
     visibility: visible;
 }
+
 .CV-BOT-LAT { 
 	grid-area: CV-BOT-LAT;
-	border: 1px solid green;
  }
 
+.CV-BOT-LAT-SECT { 
+	border-bottom: 1px dashed $color1;
+ }
+ 
+.CV-BOT-LAT-SECT-TITLE { 
+
+ }
+ 
+.CV-BOT-LAT-SECT-CONT { 
+
+ }
