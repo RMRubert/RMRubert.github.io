@@ -64,9 +64,14 @@
  }
  
  .CV-BOT-MAIN-SECT{
-	border-bottom: 1px solid $color3;
+	border-bottom: 1px solid $color5;
  }
  
+  .CV-BOT-MAIN-SECT-TITLE{
+	font-size: large;
+	font-variant: small-caps;
+	color: $color5;
+ }
 
 .CV-BOT-MAIN-GRIDC {
 	display: grid;
