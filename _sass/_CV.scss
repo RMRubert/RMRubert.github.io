@@ -11,7 +11,7 @@
   grid-template-areas:
     "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
     "CV-INTRO-PHOTO CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT"
-    "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-LATERAL";
+    "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-LAT";
 	padding-left: 5px;
 }
 
@@ -31,12 +31,9 @@
 	font-style: italic;
  }
  
- .CV-INTRO { 
-	border-bottom: 2px solid $color3;
- }
  
 .CV-INTRO-PHOTO { 
-	grid-area: CV-PHOTO;
+	grid-area: CV-INTRO-PHOTO;
 	padding: 1px 1px 1px 1px;
 	margin: auto;
 	width: 100%;
@@ -44,7 +41,7 @@
  }
 
 .CV-INTRO-TEXT { 
-	grid-area: CV-INTRO;
+	grid-area: CV-INTRO-TEXT;
 	padding: 3px 3px 3px 3px;
 	margin: auto;
  }
@@ -134,7 +131,7 @@ img.CV-LOGO {
 
 
 .CV-BOT-LAT { 
-	grid-area: CV-LATERAL;
+	grid-area: CV-BOT-LAT;
 	border: 1px solid green;
  }
 
