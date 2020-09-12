@@ -147,6 +147,12 @@ img.CV-LOGO {
   padding: 0px 10px 0px 0px;
 }
 
+.CV-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
 .CV-tooltip .CV-tiptext {
     visibility: hidden;
     width: 120px;
