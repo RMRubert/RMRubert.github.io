@@ -154,8 +154,9 @@ img.CV-LOGO {
 }
 
 .CV-tooltip .CV-tiptext {
+	font-size: medium;
     visibility: hidden;
-    width: 500px;
+    width: 400px;
     background-color: $color4;
     color: $color1;
     text-align: left;
@@ -166,12 +167,14 @@ img.CV-LOGO {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
 }
+/*
 .CV-tooltip .CV-tiptext::after {
     content: "";
     position: absolute;
     border-width: 5px;
     border-style: solid;
 }
+*/
 .CV-tooltip:hover .CV-tiptext {
     visibility: visible;
 }
