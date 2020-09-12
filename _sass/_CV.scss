@@ -147,8 +147,27 @@ img.CV-LOGO {
   padding: 0px 10px 0px 0px;
 }
 
-
-
+.CV-tooltip .CV-tiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 6px 0;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.CV-tooltip .CV-tiptext::after {
+    content: "";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+.CV-tooltip:hover .CV-tiptext {
+    visibility: visible;
+}
 .CV-BOT-LAT { 
 	grid-area: CV-BOT-LAT;
 	border: 1px solid green;
