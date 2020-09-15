@@ -98,7 +98,7 @@
 .CV-BOT-MAIN-GC-NAME-POST {
 	color: $color4;
 	font-weight: bold;
-	font-size: larger;
+	font-size: normal;
 	text-align: right;
 }
 
@@ -108,11 +108,9 @@
 }
 
 .CV-BOT-MAIN-LOGO { 
-  width: 80%;
+  width: 70%;
   height: auto;
-  text-align: center;
-  align-items: center;
-  display: flex;
+  float: right;
 }
 
 img.CV-LOGO {
