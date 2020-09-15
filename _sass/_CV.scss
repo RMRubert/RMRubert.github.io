@@ -24,12 +24,12 @@
  
  .CV-SEP {
 	grid-area: CV-SEP;
-	border-bottom: 2px solid $color3;
+	border-bottom: 2px solid $color1;
  }
  
   .CV-SEP1 {
 	grid-area: CV-SEP1;
-	border-bottom: 2px solid $color3;
+	border-bottom: 2px solid $color1;
  }
  
 .CV-TITLE-NAME { 
@@ -61,7 +61,6 @@
 
 .CV-BOT-MAIN { 
 	grid-area: CV-BOT-MAIN;
-	border-right: 1px solid $color3;
  }
  
  .CV-BOT-MAIN-SECT{
@@ -100,11 +99,13 @@
 	font-weight: bold;
 	font-size: normal;
 	text-align: right;
+	padding-bottom: 5px;
 }
 
 .CV-BOT-MAIN-GC-NAME-COMP {
 	font-style: italic;
 	text-align: right;
+	padding-bottom: 5px;
 }
 
 .CV-BOT-MAIN-LOGO { 
