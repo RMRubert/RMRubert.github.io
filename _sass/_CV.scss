@@ -92,7 +92,6 @@
 .CV-BOT-MAIN-GC-LEFT {
 	grid-area: CV-BOT-MAIN-GC-LEFT;
 	padding: 3px 5px 3px 3px;
-	
 }
 
 .CV-BOT-MAIN-GC-NAME-POST {
@@ -106,12 +105,12 @@
 }
 
 .CV-BOT-MAIN-LOGO { 
-  width: auto;
+  width: 80%;
   height: auto;
   text-align: center;
   align-items: center;
   display: flex;
-  padding: 0px 10px 0px 0px;
+  border: 1px solid red;
 
 }
 
