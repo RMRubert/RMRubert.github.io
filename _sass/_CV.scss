@@ -77,7 +77,7 @@
 
 .CV-BOT-MAIN-GRIDC {
 	display: grid;
-	grid-template-columns: 1fr 5fr;
+	grid-template-columns: 1fr 4fr;
 	gap: 1px 1px;
 	grid-template-areas:
 		"CV-BOT-MAIN-SECT-TITLE CV-BOT-MAIN-SECT-TITLE"
@@ -85,9 +85,22 @@
 
 }
 
+.CV-BOT-MAIN-GC-LEFT {
+	grid-area: CV-BOT-MAIN-GC-LEFT;
+}
+
+.CV-BOT-MAIN-GC-NAME-POST {
+	color: $color4;
+	font-weight: bold;
+	font-size: larger;
+}
+
+.CV-BOT-MAIN-GC-NAME-COMP {
+	font-style: italic;
+}
+
 .CV-BOT-MAIN-LOGO { 
-  grid-area: CV-BOT-MAIN-LOGO;
-  width: 100px;
+  width: auto;
   height: auto;
   text-align: center;
   align-items: center;
@@ -100,23 +113,10 @@ img.CV-LOGO {
   border:none !important; 
 }
 
-
-.CV-BOT-MAIN-GC-NAME {
-  grid-area: CV-BOT-MAIN-GC-NAME;
-  line-height: 30px;
-  padding: 0px 0px 0px 5px;
-  /* border: 1px solid blue;*/
+.CV-BOT-MAIN-GC-RIGHT {
+	grid-area: CV-BOT-MAIN-GC-RIGHT;
+	border-left: 2px solid $color1;
 }
-
-.CV-BOT-MAIN-GC-NAME-COMP {
-  color: $color4;
-  font-weight: bold;
-  font-size: larger;
-}
-.CV-BOT-MAIN-GC-NAME-POST {
-	font-style: italic;
-}
-
 
 .CV-BOT-MAIN-GC-TOPINFO {
  grid-area: CV-BOT-MAIN-GC-TOPINFO;
@@ -178,18 +178,3 @@ img.CV-LOGO {
     visibility: visible;
 }
 
-.CV-BOT-LAT { 
-	grid-area: CV-BOT-LAT;
- }
-
-.CV-BOT-LAT-SECT { 
-	border-bottom: 1px dashed $color1;
- }
- 
-.CV-BOT-LAT-SECT-TITLE { 
-
- }
- 
-.CV-BOT-LAT-SECT-CONT { 
-
- }
