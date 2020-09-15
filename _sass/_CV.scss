@@ -13,7 +13,7 @@
 	"CV-SEP CV-SEP CV-SEP CV-SEP CV-SEP"
     "CV-INTRO-PHOTO CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT"
 	"CV-SEP1 CV-SEP1 CV-SEP1 CV-SEP1 CV-SEP1"
-    "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-LAT";
+    "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN";
 	padding-left: 5px;
 	
 }
@@ -77,14 +77,12 @@
 
 .CV-BOT-MAIN-GRIDC {
 	display: grid;
-	grid-template-columns: 0.1fr 1.7fr 0.3fr;
-	grid-template-rows: 0.1fr 0.3fr auto;
+	grid-template-columns: 1fr 5fr;
 	gap: 1px 1px;
 	grid-template-areas:
-		"CV-BOT-MAIN-GC-NAME CV-BOT-MAIN-GC-NAME CV-BOT-MAIN-LOGO"
-		". CV-BOT-MAIN-GC-TOPINFO CV-BOT-MAIN-LOGO"
-		". CV-BOT-MAIN-GC-DESCRIPTION CV-BOT-MAIN-GC-DESCRIPTION";
-	border-bottom: 1px solid $color4;
+		"CV-BOT-MAIN-SECT-TITLE CV-BOT-MAIN-SECT-TITLE"
+		"CV-BOT-MAIN-GC-LEFT CV-BOT-MAIN-GC-RIGHT";
+
 }
 
 .CV-BOT-MAIN-LOGO { 
