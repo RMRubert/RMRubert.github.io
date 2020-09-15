@@ -65,15 +65,10 @@
  }
  
  .CV-BOT-MAIN-SECT{
-	border-bottom: 1px solid $color5;
+	
  }
  
-  .CV-BOT-MAIN-SECT-TITLE{
-	font-size: x-large;
-	font-variant: small-caps;
-	font-weight: bold;
-	color: $color5;
- }
+
 
 .CV-BOT-MAIN-GRIDC {
 	display: grid;
@@ -85,8 +80,19 @@
 
 }
 
+.CV-BOT-MAIN-SECT-TITLE{
+	grid-area: CV-BOT-MAIN-SECT-TITLE;
+	font-size: xx-large;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: $color5;
+	padding-bottom: 10px
+ }
+
 .CV-BOT-MAIN-GC-LEFT {
 	grid-area: CV-BOT-MAIN-GC-LEFT;
+	padding: 3px 5px 3px 3px;
+	
 }
 
 .CV-BOT-MAIN-GC-NAME-POST {
@@ -106,7 +112,7 @@
   align-items: center;
   display: flex;
   padding: 0px 10px 0px 0px;
-  /* border: 1px solid red; */
+
 }
 
 img.CV-LOGO {
@@ -115,6 +121,7 @@ img.CV-LOGO {
 
 .CV-BOT-MAIN-GC-RIGHT {
 	grid-area: CV-BOT-MAIN-GC-RIGHT;
+	padding: 3px 2px 3px 5px;
 	border-left: 2px solid $color1;
 }
 
