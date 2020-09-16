@@ -63,15 +63,65 @@
 	grid-area: CV-BOT-MAIN;
  }
  
- .CV-BOT-MAIN-SECT{
+.CV-BOT-MAIN-SECT{
 	
+}
+ 
+.CV-BOT-MAIN-SECT-ITEM{
+	display: grid;
+	grid-template-columns: 0.3fr 6fr 1fr;
+	gap: 1px 1px;
+	margin-bottom: 10px;
+	grid-template-areas:
+		"CV-BOT-MAIN-SECT-ITEM-NAME CV-BOT-MAIN-SECT-ITEM-NAME CV-BOT-MAIN-SECT-ITEM-LOGO"
+		"CV-BOT-MAIN-SECT-ITEM-PLAC CV-BOT-MAIN-SECT-ITEM-PLAC CV-BOT-MAIN-SECT-ITEM-LOGO"
+		"CV-BOT-MAIN-SECT-ITEM-DATE CV-BOT-MAIN-SECT-ITEM-DATE CV-BOT-MAIN-SECT-ITEM-LOGO"
+		"CV-BOT-MAIN-SECT-ITEM-TOWN CV-BOT-MAIN-SECT-ITEM-TOWN CV-BOT-MAIN-SECT-ITEM-LOGO"
+								 ". CV-BOT-MAIN-SECT-ITEM-DESC CV-BOT-MAIN-SECT-ITEM-DESC"
+}
+
+.CV-BOT-MAIN-SECT-ITEM-NAME{
+	grid-area: CV-BOT-MAIN-SECT-ITEM-NAME;
+	font-size: xx-large;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: $color5;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed $color5;
  }
  
+ .CV-BOT-MAIN-SECT-ITEM-PLAC {
+	grid-area: "CV-BOT-MAIN-SECT-ITEM-PLAC";
+	font-style: italic;
+	text-align: right;
+	padding-bottom: 5px;
+}
 
+.CV-BOT-MAIN-SECT-ITEM-DATE {
+	grid-area: "CV-BOT-MAIN-SECT-ITEM-DATE";
+	font-style: italic;
+}
+
+.CV-BOT-MAIN-SECT-ITEM-TOWN{
+	grid-area: "CV-BOT-MAIN-SECT-ITEM-TOWN";
+}
+
+
+.CV-BOT-MAIN-SECT-ITEM-LOGO{
+	grid-area: "CV-BOT-MAIN-SECT-ITEM-LOGO";
+	width: 56%;
+	height: auto;
+	float: right;
+}
+
+.CV-BOT-MAIN-SECT-ITEM-DESC{
+	grid-area: "CV-BOT-MAIN-SECT-ITEM-DESC";
+	padding: 0px 10px 0px 0px;
+}
 
 .CV-BOT-MAIN-GRIDC {
 	display: grid;
-	grid-template-columns: 1fr 4fr;
+	grid-template-columns: 1fr 1fr;
 	gap: 1px 1px;
 	grid-template-areas:
 		"CV-BOT-MAIN-SECT-TITLE CV-BOT-MAIN-SECT-TITLE"
