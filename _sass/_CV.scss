@@ -67,62 +67,61 @@
 	
 }
  
-.CV-BOT-MAIN-SECT-ITEM{
-	display: grid;
-	grid-template-columns: 0.3fr 6fr 1fr;
-	border: 1px dotted black;
-	gap: 1px 1px;
-	margin-bottom: 10px;
-	grid-template-areas:
-		"CV-BOT-MAIN-SECT-ITEM-NAME CV-BOT-MAIN-SECT-ITEM-NAME CV-BOT-MAIN-SECT-ITEM-LOGO"
-		"CV-BOT-MAIN-SECT-ITEM-PLAC CV-BOT-MAIN-SECT-ITEM-PLAC CV-BOT-MAIN-SECT-ITEM-LOGO"
-		"CV-BOT-MAIN-SECT-ITEM-DATE CV-BOT-MAIN-SECT-ITEM-DATE CV-BOT-MAIN-SECT-ITEM-LOGO"
-		"CV-BOT-MAIN-SECT-ITEM-TOWN CV-BOT-MAIN-SECT-ITEM-TOWN CV-BOT-MAIN-SECT-ITEM-LOGO"
-								 ". CV-BOT-MAIN-SECT-ITEM-DESC CV-BOT-MAIN-SECT-ITEM-DESC"
+.CV-BOT-MAIN-SECT-ITEM {
+  display: grid;
+  grid-template-columns: 0.3fr 6fr 1fr;
+  border: 1px dotted black;
 }
 
-.CV-BOT-MAIN-SECT-ITEM-NAME{
-	grid-area: CV-BOT-MAIN-SECT-ITEM-NAME;
-	color: $color4;
-	font-weight: bold;
-	font-size: normal;
-	text-align: right;
-	padding-bottom: 5px;
-	border: 1px dotted blue;
- }
- 
- .CV-BOT-MAIN-SECT-ITEM-PLAC {
-	grid-area: "CV-BOT-MAIN-SECT-ITEM-PLAC";
-	font-style: italic;
-	text-align: right;
-	padding-bottom: 5px;
-	border: 1px dotted red;
+.CV-BOT-MAIN-SECT-ITEM-NAME {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  color: #004f2dff;
+  font-weight: bold;
+  font-size: normal;
+  text-align: right;
+  padding-bottom: 5px;
+  border: 1px dotted blue;
+}
+
+.CV-BOT-MAIN-SECT-ITEM-PLAC {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  font-style: italic;
+  text-align: right;
+  padding-bottom: 5px;
+  border: 1px dotted red;
 }
 
 .CV-BOT-MAIN-SECT-ITEM-DATE {
-	grid-area: "CV-BOT-MAIN-SECT-ITEM-DATE";
-	font-style: italic;
-	border: 1px dotted green;
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  font-style: italic;
+  border: 1px dotted green;
 }
 
-.CV-BOT-MAIN-SECT-ITEM-TOWN{
-	grid-area: "CV-BOT-MAIN-SECT-ITEM-TOWN";
-	border: 1px dotted pink;
+.CV-BOT-MAIN-SECT-ITEM-TOWN {
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+  grid-area: "CV-BOT-MAIN-SECT-ITEM-TOWN";
+  border: 1px dotted pink;
 }
 
-
-.CV-BOT-MAIN-SECT-ITEM-LOGO{
-	grid-area: "CV-BOT-MAIN-SECT-ITEM-LOGO";
-	width: 56%;
-	height: auto;
-	float: right;
-	border: 1px dotted brown;
+.CV-BOT-MAIN-SECT-ITEM-LOGO {
+  grid-column: 3 / 4;
+  grid-row: 1 / 5;
+  width: 56%;
+  height: auto;
+  float: right;
+  border: 1px dotted brown;
 }
 
-.CV-BOT-MAIN-SECT-ITEM-DESC{
-	grid-area: "CV-BOT-MAIN-SECT-ITEM-DESC";
-	padding: 0px 10px 0px 0px;
-	border: 1px dotted lime;
+.CV-BOT-MAIN-SECT-ITEM-DESC {
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+  padding: 0px 10px 0px 0px;
+  border: 1px dotted lime;
+}
 }
 
 .CV-BOT-MAIN-GRIDC {
