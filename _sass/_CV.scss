@@ -66,11 +66,20 @@
 .CV-BOT-MAIN-SECT{
 	
 }
+
+.CV-BOT-MAIN-SECT-TITLE{
+	font-size: xx-large;
+	font-weight: bold;
+	font-variant:  small-caps;
+	color: $color5;
+	border-bottom: 2px dotted $color5;
+	
+}
  
 .CV-BOT-MAIN-SECT-ITEM {
   display: grid;
   grid-template-columns: 0.3fr 6fr 1fr;
-  border: 1px dotted black;
+
 }
 
 .CV-BOT-MAIN-SECT-ITEM-NAME {
@@ -81,16 +90,14 @@
   font-size: normal;
   text-align: left;
   padding-bottom: 5px;
-  border: 1px dotted blue;
+
 }
 
 .CV-BOT-MAIN-SECT-ITEM-WORK {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  font-style: italic;
   text-align: left;
-  padding-bottom: 5px;
-  border: 1px dotted red;
+
 }
 
 .CV-BOT-MAIN-SECT-ITEM-WORK:before {
@@ -99,8 +106,7 @@
 .CV-BOT-MAIN-SECT-ITEM-DATE {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
-  font-style: italic;
-  border: 1px dotted green;
+
 }
 .CV-BOT-MAIN-SECT-ITEM-DATE:before {
    content: "📅 "; 
@@ -111,7 +117,7 @@
   grid-column: 2 / 3;
   grid-row: 4 / 5;
   grid-area: "CV-BOT-MAIN-SECT-ITEM-TOWN";
-  border: 1px dotted pink;
+
 }
 
 .CV-BOT-MAIN-SECT-ITEM-TOWN:before {
@@ -125,14 +131,14 @@
   width: 100%;
   height: auto;
   float: right;
-  border: 1px dotted brown;
+
 }
 
 .CV-BOT-MAIN-SECT-ITEM-DESC {
   grid-column: 2 / 4;
   grid-row: 5 / 6;
   padding: 0px 10px 0px 0px;
-  border: 1px dotted lime;
+
 }
 
 
