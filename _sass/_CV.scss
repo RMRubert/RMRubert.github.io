@@ -84,7 +84,7 @@
   border: 1px dotted blue;
 }
 
-.CV-BOT-MAIN-SECT-ITEM-PLAC {
+.CV-BOT-MAIN-SECT-ITEM-WORK {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   font-style: italic;
@@ -93,6 +93,9 @@
   border: 1px dotted red;
 }
 
+.CV-BOT-MAIN-SECT-ITEM-WORK:before {
+	content: "💼 ";
+}
 .CV-BOT-MAIN-SECT-ITEM-DATE {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
