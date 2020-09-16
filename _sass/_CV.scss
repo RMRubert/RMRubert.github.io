@@ -77,16 +77,16 @@
 		"CV-BOT-MAIN-SECT-ITEM-PLAC CV-BOT-MAIN-SECT-ITEM-PLAC CV-BOT-MAIN-SECT-ITEM-LOGO"
 		"CV-BOT-MAIN-SECT-ITEM-DATE CV-BOT-MAIN-SECT-ITEM-DATE CV-BOT-MAIN-SECT-ITEM-LOGO"
 		"CV-BOT-MAIN-SECT-ITEM-TOWN CV-BOT-MAIN-SECT-ITEM-TOWN CV-BOT-MAIN-SECT-ITEM-LOGO"
-								 ". CV-BOT-MAIN-SECT-ITEM-DESC CV-BOT-MAIN-SECT-ITEM-DESC"
+							 "empty CV-BOT-MAIN-SECT-ITEM-DESC CV-BOT-MAIN-SECT-ITEM-DESC"
 }
 
 .CV-BOT-MAIN-SECT-ITEM-NAME{
 	grid-area: CV-BOT-MAIN-SECT-ITEM-NAME;
-	font-size: xx-large;
-	font-variant: small-caps;
+	color: $color4;
 	font-weight: bold;
-	color: $color5;
-	margin-bottom: 10px;
+	font-size: normal;
+	text-align: right;
+	padding-bottom: 5px;
 	border-bottom: 1px dashed $color5;
  }
  
