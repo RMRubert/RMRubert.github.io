@@ -156,18 +156,20 @@
 
 .CV-BOT-INFO-LANG {
 	grid-column: 1 / 2;
+}
+
+.CV-BOT-INFO-LANG-ITEM {
 	display: grid;
 	grid-template-columns: 0.2fr 0.6fr 1.2fr;
-
 }
-
-.CV-BOT-INFO-LANG-ICON {
+  
+.CV-BOT-INFO-LANG-ITEM-ICON {
 	grid-column: 1 / 2;
 }
-.CV-BOT-INFO-LANG-NAME {
+.CV-BOT-INFO-LANG-ITEM-NAME {
 	grid-column: 2 / 3;
 }
-.CV-BOT-INFO-LANG-DESC {
+.CV-BOT-INFO-LANG-ITEM-DESC {
 	grid-column: 3 / 4;
 
 }
