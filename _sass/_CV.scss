@@ -151,7 +151,7 @@
 
 .CV-BOT-INFO {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 2fr 1.5fr 1.5fr;
 }
 
 .CV-BOT-INFO-LANG {
@@ -176,10 +176,12 @@ img.CV-ICON {
 .CV-BOT-INFO-LANG-ITEM-ICON {
 	grid-column: 1 / 2;
 	max-height: 95%;
+	padding: 1px 1px 1px 1px;
 }
 
 .CV-BOT-INFO-LANG-ITEM-NAME {
 	grid-column: 2 / 3;
+	padding: 1px 1px 1px 1px;
 }
 .CV-BOT-INFO-LANG-ITEM-DESC {
 	grid-column: 3 / 4;
@@ -192,18 +194,16 @@ img.CV-ICON {
 
 .CV-BOT-INFO-DRLI-ITEM {
 	display: grid;
-	grid-template-columns: 0.3fr 0.3fr 1.2fr;
+	grid-template-columns: 0.2fr 1.8fr;
 }
 .CV-BOT-INFO-DRLI-ITEM-ICON {
 	grid-column: 1 / 2;
 	max-height: 95%;
 }
 
-.CV-BOT-INFO-DRLI-ITEM-NAME {
-	grid-column: 2 / 3;
-}
+
 .CV-BOT-INFO-DRLI-ITEM-DESC {
-	grid-column: 3 / 4;
+	grid-column: 2 / 3;
 
 }
 
