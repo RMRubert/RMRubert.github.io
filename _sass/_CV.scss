@@ -208,9 +208,6 @@ img.CV-ICON {
 	max-height: 50px;
 }
 
-
-
-
 .CV-BOT-INFO-HOBB {
 	grid-column: 2 / 3;
 }
@@ -247,5 +244,11 @@ img.CV-ICON {
     visibility: visible;
 }
 
+
+@media only screen and (max-width: 600px) {
+	.CV-BOT-MAIN-SECT-ITEM-DESC {
+		display: none;
+	}
+}
 
 
