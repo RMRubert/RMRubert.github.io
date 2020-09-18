@@ -196,21 +196,17 @@ img.CV-ICON {
 }
 
 .CV-BOT-INFO-DRLI-ITEM {
-	display: grid;
-	grid-template-columns: 0.2fr 1.8fr;
+	display: flex;
+
 }
 .CV-BOT-INFO-DRLI-ITEM-ICON {
-	grid-column: 1 / 2;
 	max-height: 95%;
 	align-self: center;
+	max-height: 50px;
 }
 
 
-.CV-BOT-INFO-DRLI-ITEM-DESC {
-	grid-column: 2 / 3;
-	align-self: center;
 
-}
 
 .CV-BOT-INFO-HOBB {
 	grid-column: 2 / 3;
