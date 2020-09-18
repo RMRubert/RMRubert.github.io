@@ -167,15 +167,16 @@
 	grid-template-columns: 0.2fr 0.6fr 1.2fr;
 }
   
-.CV-BOT-INFO-LANG-ITEM-ICON {
-	grid-column: 1 / 2;
-	max-height: 95%;
-}
+
 
 img.CV-ICON {
   border:none !important; 
 }
 
+.CV-BOT-INFO-LANG-ITEM-ICON {
+	grid-column: 1 / 2;
+	max-height: 95%;
+}
 
 .CV-BOT-INFO-LANG-ITEM-NAME {
 	grid-column: 2 / 3;
@@ -187,6 +188,23 @@ img.CV-ICON {
 
 .CV-BOT-INFO-DRLI {
 	grid-column: 2 / 3;
+}
+
+.CV-BOT-INFO-DRLI-ITEM {
+	display: grid;
+	grid-template-columns: 0.3fr 0.3fr 1.2fr;
+}
+.CV-BOT-INFO-DRLI-ITEM-ICON {
+	grid-column: 1 / 2;
+	max-height: 95%;
+}
+
+.CV-BOT-INFO-DRLI-ITEM-NAME {
+	grid-column: 2 / 3;
+}
+.CV-BOT-INFO-DRLI-ITEM-DESC {
+	grid-column: 3 / 4;
+
 }
 
 .CV-BOT-INFO-HOBB {
