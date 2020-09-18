@@ -177,14 +177,17 @@ img.CV-ICON {
 	grid-column: 1 / 2;
 	max-height: 95%;
 	padding: 1px 1px 1px 1px;
+	align-self: center;
 }
 
 .CV-BOT-INFO-LANG-ITEM-NAME {
 	grid-column: 2 / 3;
 	padding: 1px 1px 1px 1px;
+	align-self: center;
 }
 .CV-BOT-INFO-LANG-ITEM-DESC {
 	grid-column: 3 / 4;
+	align-self: center;
 
 }
 
@@ -199,11 +202,13 @@ img.CV-ICON {
 .CV-BOT-INFO-DRLI-ITEM-ICON {
 	grid-column: 1 / 2;
 	max-height: 95%;
+	align-self: center;
 }
 
 
 .CV-BOT-INFO-DRLI-ITEM-DESC {
 	grid-column: 2 / 3;
+	align-self: center;
 
 }
 
