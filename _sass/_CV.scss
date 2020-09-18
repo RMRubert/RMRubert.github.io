@@ -154,6 +154,10 @@
 	grid-template-columns: 2fr 1.5fr 1.5fr;
 }
 
+.CV-BOT-INFO-MAIN {
+	display: flex;
+}
+
 .CV-BOT-INFO-LANG {
 	grid-column: 1 / 2;
 }
@@ -165,6 +169,7 @@
 .CV-BOT-INFO-LANG-ITEM {
 	display: grid;
 	grid-template-rows: 2fr auto;
+	padding: 1px 1px 1px 1px;
 }
   
 
@@ -185,6 +190,7 @@ img.CV-ICON {
 .CV-BOT-INFO-LANG-ITEM-DESC {
 	grid-row: 2 / 3;
 	align-self: center;
+	text-align: center;
 
 }
 
