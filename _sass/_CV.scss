@@ -175,9 +175,10 @@ img.CV-ICON {
 .CV-BOT-INFO-LANG-ITEM {
   display: inline-grid;
   gap: 2px 2px;
-  grid-template-rows: auto auto;
+  grid-template-rows: 25px auto;
   grid-template-columns: 3fr 5fr;
-  padding: 1px 10px 1px 10px;
+  padding: 1px 1px 1px 10px;
+  width: 32%;
 }
 
 .CV-BOT-INFO-LANG-ITEM-ICON {
@@ -198,7 +199,7 @@ img.CV-ICON {
 	grid-row: 2 / 3;
 	grid-column: 2 / 3;
 	align-self: center;
-
+	font-size:  small;
 }
 
 
