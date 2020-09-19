@@ -3,6 +3,10 @@
 /* CV RULES */
 /************/
 
+img.CV-ICON {
+  border:none !important; 
+}
+
 .CV-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -175,16 +179,14 @@
 .CV-BOT-INFO-LANG-ITEM {
 	display: grid;
 	gap: 2px 2px;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: auto auto;
 	grid-template-columns: 1fr 1fr;
 	padding: 1px 1px 1px 1px;
 }
   
 
 
-img.CV-ICON {
-  border:none !important; 
-}
+
 
 .CV-BOT-INFO-LANG-ITEM-ICON {
 	grid-row: 1 / 2;
