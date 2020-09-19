@@ -165,21 +165,17 @@ img.CV-ICON {
 
 }
 
-.CV-BOT-INFO-MAIN {
-	display: flex;
-}
-
-
 
 .CV-BOT-INFO-LANG {
-
+	display: block;
+	text-align: center;
 }
 
 
 .CV-BOT-INFO-LANG-ITEM {
-	display: grid;
+	display: inline-block;
 	gap: 2px 2px;
-	grid-template-rows: auto auto;
+	grid-template-rows: 1fr auto;
 	grid-template-columns: 1fr 1fr;
 	padding: 1px 1px 1px 1px;
 }
