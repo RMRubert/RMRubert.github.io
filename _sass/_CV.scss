@@ -216,9 +216,9 @@ img.CV-ICON {
 }
 
 .CV-tooltip .CV-tiptext {
-	font-size: medium;
+	font-size: small;
     visibility: hidden;
-    width: 400px;
+    width: 300px;
     background-color: $color4;
     color: $color1;
     text-align: left;
@@ -226,17 +226,24 @@ img.CV-ICON {
     padding: 6px 0;
     position: absolute;
     z-index: 1;
+	bottom: 125%;
+	left:0%;
+	margin-left: -30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
 }
-/*
+
 .CV-tooltip .CV-tiptext::after {
     content: "";
     position: absolute;
-    border-width: 5px;
-    border-style: solid;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: $color4 transparent transparent transparent;
 }
-*/
+
 .CV-tooltip:hover .CV-tiptext {
     visibility: visible;
 }
