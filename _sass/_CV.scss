@@ -9,38 +9,21 @@ img.CV-ICON {
 
 .CV-grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  line-height: normal;
-  gap: 1px 1px;
-  grid-template-areas:
-    "CV-TITLE CV-TITLE CV-TITLE CV-TITLE CV-TITLE"
-	"CV-SEP CV-SEP CV-SEP CV-SEP CV-SEP"
-    "CV-INTRO-PHOTO CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT CV-INTRO-TEXT"
-	"CV-SEP1 CV-SEP1 CV-SEP1 CV-SEP1 CV-SEP1"
-    "CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN CV-BOT-MAIN";
-	padding-left: 5px;
-	
+  grid-template-columns: 1fr 4fr;
 }
 
 .CV-TITLE { 
-	grid-area: CV-TITLE;
- }
- 
- .CV-SEP {
-	grid-area: CV-SEP;
+	grid-column: 1 / 3;
+	grid-row: 1 / 2;
 	border-bottom: 2px solid $color1;
  }
  
-  .CV-SEP1 {
-	grid-area: CV-SEP1;
-	border-bottom: 2px solid $color1;
- }
- 
+
 .CV-TITLE-NAME { 
 	font-size:	x-large;
 	font-weight:  bold;
 	font-variant:  small-caps;
-	color: $color2;
+	color: $color3;
  }
  
  .CV-TITLE-SUBT { 
@@ -50,7 +33,8 @@ img.CV-ICON {
  
  
 .CV-INTRO-PHOTO { 
-	grid-area: CV-INTRO-PHOTO;
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
 	padding: 1px 1px 1px 1px;
 	margin: auto;
 	width: 100%;
@@ -58,13 +42,15 @@ img.CV-ICON {
  }
 
 .CV-INTRO-TEXT { 
-	grid-area: CV-INTRO-TEXT;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
 	padding: 3px 3px 3px 3px;
 	margin: auto;
  }
 
 .CV-BOT-MAIN { 
-	grid-area: CV-BOT-MAIN;
+	grid-column: 1 / 3;
+	grid-row: 3 / 4;
  }
  
 .CV-BOT-MAIN-SECT{
