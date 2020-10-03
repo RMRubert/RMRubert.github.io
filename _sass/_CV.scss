@@ -15,7 +15,7 @@ img.CV-ICON {
 .CV-TITLE { 
 	grid-column: 1 / 3;
 	grid-row: 1 / 2;
-
+	border-bottom: 2px solid $color1;
  }
  
 
@@ -23,6 +23,7 @@ img.CV-ICON {
 	font-size:	x-large;
 	font-weight:  bold;
 	font-variant:  small-caps;
+	color: $color3;
  }
  
  .CV-TITLE-SUBT { 
