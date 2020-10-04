@@ -310,6 +310,10 @@ footer {
    /* content: "🏷 "; /* not-emoji*/
 }
 
+.r-save-link{
+	font-weight: bolder;
+}
+
 .r-save-link:before{
 	content: "💾 ";
 }

@@ -13,7 +13,9 @@ Those who work with me know that I am a fan of dark themes on applications. Howe
 
 This blog post is to announce three new UDL (User Defined Languages) with a Dark Solarized scheme for Flood Modeller (IEF) files, TUFLOW (TCF, TGC, TBC) files and Markdown (MD) files.
 
-Check the [GitHub repository](https://github.com/RMRubert/Notepad-UDL){:target="_blank"} if you are interested in downloading them.
+Check the GitHub repository below if you are interested in downloading them.
+
+[GitHub repository](https://github.com/RMRubert/Notepad-UDL){:target="_blank" class="r-save-link"}
 
 ----
 
