@@ -31,7 +31,7 @@ The thing is when one start with the actual classifying process you tend to crea
 
 I am currently reiterating all the process and trying to divide **Pop** into other subgenres like **New Wave** (already done), **electropop** (currently working on this).
 
-## Automatising the process
+## Software to auto-sort by Genre
 
 There are several tools that will help you to organise your music collection. The most famous (and free) is the [Music Brainz Picard](https://picard.musicbrainz.org/). This software will scan your music collection, assign them an ID using some kind of fancy Hash for music. Compare with their own community giant basedata collection and retrieve the information.
 
@@ -41,11 +41,9 @@ There are plenty of privative (and quite expensive) [alternatives](https://alter
 
 ## Assigning artist / songs to genre
 
-I decided to assign every artist to a genre. And only if those artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me) and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out)) would be deal in a song basis.
+I decided to assign every artist to a genre. And only if certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me) and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out)) would be deal in a song basis.
 
-In a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_forms), I decided to give to every genre a master song. The master song will act as an "Idea" or "Form" of the genre. Like the only true representation of that genre. 
-
-Any other song will be classify into a genre if they could be listened in the same "Radio Station" that the master song. If not, they would need to go to another genre or be exiled into the "other" genre. Here are the list of "Form songs". I am pretty sure that nobody will agree with my "Form song list".
+In a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_forms), I decided to give to every genre a master song. The master song will act as an "Idea" or "Form" of the genre. Like the only true representation of that genre. Any other song will be classified into the same genre _if they could be listened in the same "Radio Station"_ that the master song. If not, they would need to go to another genre or be exiled into the "other" genre. Here are the list of "Form songs". I am pretty sure that nobody will agree with my "Form song list".
 
 | Genre            | Songs |Info| Canción                    |
 |------------------|-------|----|----------------------------|
@@ -92,26 +90,22 @@ Any other song will be classify into a genre if they could be listened in the sa
 	D. This genre will be removed due to having a small pool of songs.
 	E. Pop has been quite overused genre, and second revision of those must be done to reclass them.
 
-## How was it done
+## Getting some extra help before manual sorting
 
-I decided that apart of going one by one and choosing one, it would be nice to have a list of genres, even if they weren't in my genre-list. The first thing is to go to [Last.fm](https://www.last.fm/api) and sign in for an API request. You will end up having an API key, which is just a very long alphanumeric word like this one "0123456789abcdef0123456789abcdef". 
+
+First of all is getting all the information from our music collection in a format we can import into R. [Tagscanner](https://www.xdlab.ru/en/) is our man. Scan your library, and in the export tab, save a .csv "Excel friendly" in UTF-8 with DOM. Mind that from this moment until you finish, you must not modify your library by adding, removing or editing any file here.
+
+Next step is to get a [last.fm API](https://www.last.fm/api) so we can call it from our R code. Sign in for an API request and get you API key, your API key is an hexadecimal number that should look similar to this one "0123456789abcdef0123456789abcdef". 
+
+Next step, get R and Rstudio ready and install the urltools, jsonlite, memoise and curl packages. We will be creating some functions that will help us to retrieve information from last.fm database.
 
 	library(urltools)
 	library(jsonlite)
-	library(memoise)
-	library(curl)
 	
+	# Add your Last.fm API Here
 	lastFM_API = "0123456789abcdef0123456789abcdef"
 	
-	build_track_info_query <- function(artist, track, api_key= lastFM_API, base = "http://ws.audioscrobbler.com/2.0/") {
-	base <- param_set(base, "method", "track.getInfo")
-	base <- param_set(base, "artist", URLencode(artist))
-	base <- param_set(base, "track", URLencode(track))
-	base <- param_set(base, "api_key", api_key)
-	base <- param_set(base, "format", "json")
-	return(base)
-	}
-	
+	# This function returns the JSON URL for certain Artist
 	build_artist_info <- function(artist,  api_key= lastFM_API, base = "http://ws.audioscrobbler.com/2.0/"){
 	base <- param_set(base, "method", "artist.getInfo")
 	base <- param_set(base, "artist", URLencode(artist))
@@ -120,58 +114,86 @@ I decided that apart of going one by one and choosing one, it would be nice to h
 	return(base)
 	}
 	
-	fetch_track_album <- function(artist, track) {
-	print(paste0("Fetching ", artist, " song: ", track))
-	json <- fromJSON(build_track_info_query(artist, track))
-	if (is.null(json$track$album)) return(NA)
-	return(json$track$album$title)
+
+The function: *build_artist_info(artist = "Aqua")*, does the same, but in this case the URL will point to the artist JSON information, which contains information such as similar artist, their wiki entry, genre tags, etc...
+
+We now need to read this JSON file. This can be done with the function fromJSON().
+
+	fromJSON(build_artist_info(artist = "Aqua"))
+
+This function will provide with a list of lists that contain the JSON information. Accessing to the top 5 last.fm genre is as easy as navigating through the data to:
+
+	fromJSON(build_artist_info(artist = "Aqua"))$artist$tags$tag$name
+
+Now we are ready to:
+
+Mind that I am reading the tracklist without a header, because tagscanner don't give one. That I am using the defaults values of tagscanner. That my separator is ; because I am in a Spanish computer, and I am forcing reading the encoding and every column as a character. I also have a genrelist.csv with all the desired genres. 
+
+	# Read the csv with the library information
+	tracklist = read.table(r"(B:\Documents\R\RMusicOrganiser\tracklist_MBID.csv)", header = FALSE, sep = ";", fileEncoding = "UTF-8-BOM", colClasses = rep("character",14))
+	
+	# Get a list of Artists
+	UniqueArtistList = unique(tracklist$V2)
+	
+	# For each artist, provide me with the 5 top genre tags
+	ArtistGenresList = sapply( UniqueArtistList, function(x){fromJSON(build_artist_info(x))$artist$tags$tag$name})
+
+Depending on the size of your artist list, this command can take a while to run. You will end up with a list of artist, which contains a list of 5 tags, or an empty list if they couldnt find the artist. Now you could write a fancy code to prioritise some tags over other (Dance > Pop, Classic Rock > Rock) to help you, but it will have the same problem than using music brainz or similar. At the end you will have to review all information so I decided to export all info into a sheet. And select it manually.
+
+This piece of code is to get a sheet with the artist and the 5 genres.
+
+	# Create Empty data.frame
+	df3 = data.frame()
+	
+	# Function to expand data
+	expand_genre_todf <- function(x){
+		y = unlist(x)
+		if (length(y) == 5) {
+			res = data.frame(Artist = names(x),
+							genre1 = y[1],F1 = 0,
+							genre2 = y[2],F2 = 0,
+							genre3 = y[3],F3 = 0,
+							genre4 = y[4],F4 = 0,
+							genre5 = y[5],F5 = 0,
+							row.names = NULL)
+		} else {
+			res = data.frame(Artist = names(x),
+							genre1 = NA,F1 = 0,
+							genre2 = NA,F2 = 0,
+							genre3 = NA,F3 = 0,
+							genre4 = NA,F4 = 0,
+							genre5 = NA,F5 = 0,
+							row.names = NULL)
+		}
+		return(res)
 	}
 	
-	filter_genres <- function(artistTAG, genrelist, tolerance = 0.2){
-	artist = unlist(artistTAG, use.names = FALSE)
-	if (is.null(artist[[1]])) {
-		FilterGenres = "ERROR"
-	} else {
-		AdistMatrix = adist(artist, genrelist, ignore.case = TRUE)
-		AdistMatrix = AdistMatrix / sapply(artist, nchar)
-		AdistMatrix = AdistMatrix < tolerance
-		FilterVector = apply(AdistMatrix, 2,any)
-		FilterGenres = genrelist[FilterVector]
-	}
-	
-	
-	return(FilterGenres)
-	}
-	
-	get_album_year <- function(MBA_ID){
-	if (MBA_ID != ""){
-		url <- paste0("http://musicbrainz.org/ws/2/release/",MBA_ID,"?fmt=json")
-		info_album <- fromJSON(url)
-		#year = info_album$date
-		date <- as.Date(info_album$date,"%Y-%m-%d")
-		year <- as.numeric(format(date,'%Y'))
-	} else {
-		year = NA
-	}
-	
-	return(year)
+	# Build dataframe
+	for (i in 1:length(ArtistGenresList)) {
+		df3 = rbind(df3, expand_genre_todf(ArtistGenresList[i]))
 	}
 
+Now if you view df3, you can see I have leave a numeric value of 0 next to every tag. I will make this value 1, if the genre next to it is in our master genre list. I have created a csv with our genre master list.
 
+	# Read our list of genres
+	genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
 
+And I go one by one checking if each of the 5 genre is in the masterlist. Mind that I am not using a simple string comparison. This is because last.fm might have Hip-Hop, HipHop, hip hop, or any other value. That when compared with my genre "hip-hop" would give me a False. Instead I am convertir everything into capital letters, and using a coefficient between adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error and provided good results.
 
+	# Add filtering
+	for (i in c(2,4,6,8,10)){
+	  for (j in 1:nrow(df3)){
+		xg = toupper(df3[j,i])
+		if (!is.na(xg)){
+		  if (any(adist(xg,toupper(genrelist))/nchar(xg) < 0.2)) {df3[j,i+1]=1}
+		}
+	  }
+	}
 
-<!--
-The game is pretty straight forward and follows the same rules that the android game with the same name. Select a cell, and then press one of the arrows to push the cell in that direction. Cells need to be pushed against one of the same value until you will manage to reach 2048. The game won't tell you when there are no more available moves. The game has been tested and works on LibreOffice 7.
+And we can end up by writing this file into a csv that we can open with your favourite calc sheet programs. 
 
-[Download](https://github.com/RMRubert/ExcelsUtils/blob/master/Games/2048.xlsm){:target="_blank" class="r-save-link"}.
-
-![Notepad++ Screenshot](/images/Posts/2020/2020-09-22_Image2.png){: .center-image }
-## Minesweeper (v2)
-
-Apparently, there was a version 1 of this game that I must have lost at some point. You will require to tag all the mines until there all of them are tagged. To tag or dig, select a cell and click on the tag or dig button. Mind that the routine that checks all mine-empty terrain has not been optimised so it might take a few seconds to get all revealed. You could technically go to the second page to see the results, but please don't (or do it, but it won't be a fair play!). The game is unable to work on LibreOffice 7, which is not surprising as it was designed for Excel 2013.
-
-[Download](https://github.com/RMRubert/ExcelsUtils/blob/master/Games/MineSweeper.v2.xlsm){:target="_blank" class="r-save-link"}.
-
+	write.table(df3, file = r"(B:\Documentos\GitHub\RMusicOrganiser\Artist_Genre.csv)",
+				sep = ",",
+				row.names = FALSE)
 
 
