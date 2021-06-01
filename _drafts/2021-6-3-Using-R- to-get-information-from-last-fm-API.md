@@ -148,20 +148,20 @@ This piece of code is to get a data frame with the artist, the 5 genres and a sc
 		y = unlist(x)
 		if (length(y) == 5) {
 			res = data.frame(Artist = names(x),
-							genre1 = y[1],F1 = 0,
-							genre2 = y[2],F2 = 0,
-							genre3 = y[3],F3 = 0,
-							genre4 = y[4],F4 = 0,
-							genre5 = y[5],F5 = 0,
-							row.names = NULL)
+					genre1 = y[1],F1 = 0,
+					genre2 = y[2],F2 = 0,
+					genre3 = y[3],F3 = 0,
+					genre4 = y[4],F4 = 0,
+					genre5 = y[5],F5 = 0,
+					row.names = NULL)
 		} else {
 			res = data.frame(Artist = names(x),
-							genre1 = NA,F1 = 0,
-							genre2 = NA,F2 = 0,
-							genre3 = NA,F3 = 0,
-							genre4 = NA,F4 = 0,
-							genre5 = NA,F5 = 0,
-							row.names = NULL)
+					genre1 = NA,F1 = 0,
+					genre2 = NA,F2 = 0,
+					genre3 = NA,F3 = 0,
+					genre4 = NA,F4 = 0,
+					genre5 = NA,F5 = 0,
+					row.names = NULL)
 		}
 		return(res)
 	}
