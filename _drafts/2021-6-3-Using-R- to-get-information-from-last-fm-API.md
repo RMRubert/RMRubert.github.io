@@ -5,7 +5,7 @@ category: EN
 tags: [Coding, R, Raspberry]
 ---
 
-![Notepad++ Screenshot](/images/Posts/2020/2020-09-22_Image1.png){: .center-image }
+![Musicbee Screenshot](/images/Posts/2020/2021-06-01_Image1.png){: .center-image }
 
 I have been having a raspberry PI project in mind for way too long time which requires having my music library collection organised. Pretty well organised. I mean when I started it was fairly good organised, by artist name. The title and artist tags were on spot but there was one tag that was a nightmare... The genre tag.
 
@@ -19,8 +19,6 @@ Music genres are like asses. Every single person has one and they are all differ
 
 <!-- more -->
 
-<div class="x-frame video" data-video="https://www.youtube.com/watch?v=Vx6hmUv06tg"> </div>
-
 Another common problem is that some artists have a really specific music tag for themselves. This occurs more often than I would like it. (None, I would like to happen ZERO times!) Do I really want to classify Cartoons in the [tecnobilly](https://www.last.fm/tag/technobilly){:target="_blank"} genre? No, I don't, why anybody would like that, you might as well click on the artist instead. So very specific bands will be assigned a broader genre, and if not possible, they will be exiled into the wretched genre of "other", and more likely they won't be played again!
 
 Genre is also attached to what type of music does one hears, and their own music collection. If someone is really passionate about electronic music, you might want to have several tags or genres for the different styles (House, Ambient, Disco, Electro Swing) whilst if you have just a few songs you might want to classify them under Electronic/EDM, or even ignore the genre and assign it to another genre.
@@ -28,6 +26,8 @@ Genre is also attached to what type of music does one hears, and their own music
 So the first step to start is, **you need to come up with a list of genres**, and this list must be sensible with what you listen to. Because I had no idea how to start I used someone else already made list: the [ID3v1 list of genres](https://en.wikipedia.org/wiki/List_of_ID3v1_Genres). This provided me with a nice 80 tags to start with. Few tweaks here and there like, removing the *Top 40* , or *Gospel* tag, and add some more like EDM to group modern electronica (Techno, House, etc...) and separate it from classic electronic music (Tubular Bells, Michael Jean Jarre) and we are fine to go, or so I thought...
 
 The thing is when one start with the actual classifying process you tend to create a few genres that will contain very few songs. For instance in my case: **New Age**, **Psychedelic**, and **Vocal** contain less than 20 songs combined. On the other hand, other genres will accumulate most of the song in my collection, **Classic Rock** has 710 songs, **Pop** has 1015 songs, whilst the whole library contains 3982 songs.
+
+![Library Statistic](/images/Posts/2020/2021-06-01_Image2.png){: .center-image }
 
 I am currently reiterating all the process and trying to divide **Pop** into other subgenres like **New Wave** (already done), **electropop** (currently working on this).
 
