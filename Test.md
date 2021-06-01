@@ -5,7 +5,7 @@ category: EN
 tags: [Coding, R, Raspberry]
 ---
 
-![Notepad++ Screenshot](/images/Posts/2020/2020-09-22_Image1.png){: .center-image }
+![Musicbee Screenshot](/images/Posts/2020/2021-06-01_Image1.png){: .center-image }
 
 I have been having a raspberry PI project in mind for way too long time which requires having my music library collection organised. Pretty well organised. I mean when I started it was fairly good organised, by artist name. The title and artist tags were on spot but there was one tag that was a nightmare... The genre tag.
 
@@ -19,8 +19,6 @@ Music genres are like asses. Every single person has one and they are all differ
 
 <!-- more -->
 
-<div class="x-frame video" data-video="https://www.youtube.com/watch?v=Vx6hmUv06tg"> </div>
-
 Another common problem is that some artists have a really specific music tag for themselves. This occurs more often than I would like it. (None, I would like to happen ZERO times!) Do I really want to classify Cartoons in the [tecnobilly](https://www.last.fm/tag/technobilly){:target="_blank"} genre? No, I don't, why anybody would like that, you might as well click on the artist instead. So very specific bands will be assigned a broader genre, and if not possible, they will be exiled into the wretched genre of "other", and more likely they won't be played again!
 
 Genre is also attached to what type of music does one hears, and their own music collection. If someone is really passionate about electronic music, you might want to have several tags or genres for the different styles (House, Ambient, Disco, Electro Swing) whilst if you have just a few songs you might want to classify them under Electronic/EDM, or even ignore the genre and assign it to another genre.
@@ -28,6 +26,8 @@ Genre is also attached to what type of music does one hears, and their own music
 So the first step to start is, **you need to come up with a list of genres**, and this list must be sensible with what you listen to. Because I had no idea how to start I used someone else already made list: the [ID3v1 list of genres](https://en.wikipedia.org/wiki/List_of_ID3v1_Genres). This provided me with a nice 80 tags to start with. Few tweaks here and there like, removing the *Top 40* , or *Gospel* tag, and add some more like EDM to group modern electronica (Techno, House, etc...) and separate it from classic electronic music (Tubular Bells, Michael Jean Jarre) and we are fine to go, or so I thought...
 
 The thing is when one start with the actual classifying process you tend to create a few genres that will contain very few songs. For instance in my case: **New Age**, **Psychedelic**, and **Vocal** contain less than 20 songs combined. On the other hand, other genres will accumulate most of the song in my collection, **Classic Rock** has 710 songs, **Pop** has 1015 songs, whilst the whole library contains 3982 songs.
+
+![Library Statistic](/images/Posts/2020/2021-06-01_Image2.png){: .center-image }
 
 I am currently reiterating all the process and trying to divide **Pop** into other subgenres like **New Wave** (already done), **electropop** (currently working on this).
 
@@ -50,7 +50,7 @@ In a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_fo
 | alternative rock  | 393   |    | [Muse – Resistance](https://www.last.fm/music/Muse/_/Resistance){:target="_blank"}                                              |
 | ambient           | 19    |    | [Mauro Picotto – Adiemus](https://www.last.fm/music/Mauro+Picotto/_/Adiemus){:target="_blank"}                                  |
 | blues             | 11    |    | [Leonard Cohen – Suzanne](https://www.last.fm/music/Leonard+Cohen/_/Suzanne){:target="_blank"}                                  |
-| classic rock      | 710   |    | [Dire Stratis – Sultans of Swing](https://www.last.fm/music/Dire+Straits/_/Sultans+of+Swing){:target="_blank"}                  |
+| classic rock      | 710   |    | [Dire Straits – Sultans of Swing](https://www.last.fm/music/Dire+Straits/_/Sultans+of+Swing){:target="_blank"}                  |
 | classical         | 1     | A  | [Ludovico Einaudi – Nuvole Bianche](https://www.last.fm/music/Ludovico+Einaudi/_/Nuvole+Bianche){:target="_blank"}              |
 | country           | 36    |    | [Toby Keith – God Love Her](https://www.last.fm/music/Toby+Keith/_/God+Love+Her){:target="_blank"}                              |
 | disco             | 67    |    | [Earth, Wind & Fire – Boogie Wonderland](https://www.last.fm/music/Earth,+Wind+&+Fire/_/Boogie+Wonderland){:target="_blank"}    |
@@ -175,6 +175,8 @@ Now if you view df3, you can see I have left a numeric value of 0 next to every 
 
 	# Read our list of genres
 	genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
+
+![Musicbee Screenshot](/images/Posts/2020/2021-06-01_Image4.png){: .center-image }
 
 And I go one by one checking if each of the 5 genres is in the master list. At first, I just did a simple string comparison. But it didn't work as expected. Last.fm tags are not standardised at all and hip-hop might appears as Hip-Hop, HipHop, hip hop, or any other similar value. Simple string comparison with (my genre) "hip-hop" would give me a positive false. Instead, I am converting everything into capital letters, and using a coefficient between the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives.
 

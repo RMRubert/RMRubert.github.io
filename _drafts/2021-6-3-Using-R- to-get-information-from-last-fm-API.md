@@ -50,7 +50,7 @@ In a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_fo
 | alternative rock  | 393   |    | [Muse – Resistance](https://www.last.fm/music/Muse/_/Resistance){:target="_blank"}                                              |
 | ambient           | 19    |    | [Mauro Picotto – Adiemus](https://www.last.fm/music/Mauro+Picotto/_/Adiemus){:target="_blank"}                                  |
 | blues             | 11    |    | [Leonard Cohen – Suzanne](https://www.last.fm/music/Leonard+Cohen/_/Suzanne){:target="_blank"}                                  |
-| classic rock      | 710   |    | [Dire Stratis – Sultans of Swing](https://www.last.fm/music/Dire+Straits/_/Sultans+of+Swing){:target="_blank"}                  |
+| classic rock      | 710   |    | [Dire Straits – Sultans of Swing](https://www.last.fm/music/Dire+Straits/_/Sultans+of+Swing){:target="_blank"}                  |
 | classical         | 1     | A  | [Ludovico Einaudi – Nuvole Bianche](https://www.last.fm/music/Ludovico+Einaudi/_/Nuvole+Bianche){:target="_blank"}              |
 | country           | 36    |    | [Toby Keith – God Love Her](https://www.last.fm/music/Toby+Keith/_/God+Love+Her){:target="_blank"}                              |
 | disco             | 67    |    | [Earth, Wind & Fire – Boogie Wonderland](https://www.last.fm/music/Earth,+Wind+&+Fire/_/Boogie+Wonderland){:target="_blank"}    |
@@ -175,6 +175,8 @@ Now if you view df3, you can see I have left a numeric value of 0 next to every 
 
 	# Read our list of genres
 	genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
+
+![Musicbee Screenshot](/images/Posts/2020/2021-06-01_Image4.png){: .center-image }
 
 And I go one by one checking if each of the 5 genres is in the master list. At first, I just did a simple string comparison. But it didn't work as expected. Last.fm tags are not standardised at all and hip-hop might appears as Hip-Hop, HipHop, hip hop, or any other similar value. Simple string comparison with (my genre) "hip-hop" would give me a positive false. Instead, I am converting everything into capital letters, and using a coefficient between the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives.
 
