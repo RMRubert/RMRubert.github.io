@@ -178,15 +178,15 @@ Now if you view df3, you can see I have left a numeric value of 0 next to every 
 
 And I go one by one checking if each of the 5 genres is in the master list. At first, I just did a simple string comparison. But it didn't work as expected. Last.fm tags are not standardised at all and hip-hop might appears as Hip-Hop, HipHop, hip hop, or any other similar value. Simple string comparison with (my genre) "hip-hop" would give me a positive false. Instead, I am converting everything into capital letters, and using a coefficient between the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives.
 
-	# Add filtering
-	for (i in c(2,4,6,8,10)){
-	  for (j in 1:nrow(df3)){
-		xg = toupper(df3[j,i])
-		if (!is.na(xg)){
-		  if (any(adist(xg,toupper(genrelist))/nchar(xg) < 0.2)) {df3[j,i+1]=1}
-		}
-	  }
-	}
+    # Add filtering
+    for (i in c(2,4,6,8,10)){
+      for (j in 1:nrow(df3)){
+    	xg = toupper(df3[j,i])
+    	if (!is.na(xg)){
+    	  if (any(adist(xg,toupper(genrelist))/nchar(xg) < 0.2)) {df3[j,i+1]=1}
+    	}
+      }
+    }
 
 And we can end up by writing this file into a CSV that we can open with your favourite calc sheet programs. 
 
