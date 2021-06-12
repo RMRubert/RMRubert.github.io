@@ -115,6 +115,8 @@ Are you curious to know my list of "Form songs". There you have.
 
 ## Less philosophy and more coding!
 
+![Time to code!](/images/Posts/2021/2021-06-12_Image7.png){: .center-image }
+
 I have written this post to teach philosophy and code in R... and I'm all out of theories.
 
 We need to pass library info to R, so we need a CSV file with information about our library. [Tagscanner](https://www.xdlab.ru/en/){:target="_blank"} is our man. Scan your library, and in the export tab, save it as an "Excel friendly" CSV file. Don't forget to check the UTF-8 with DOM option. Mind that from this moment until you finish, you **must not modify your library by adding, removing or editing any file here**. 
@@ -150,6 +152,8 @@ But we don't need to load the JSON in firefox, we need the data to be in R. The 
 This function will read the JSON, and convert it to an R format (list of lists). Don't hesitate to save this into a dummy variable and check the info in the environment panel of Rstudio, it shouldn't differ from what you saw on Firefox. To access the top 5 last.fm genre is as easy as navigating through the data to:
 
 	fromJSON(build_artist_info(artist = "Aqua"))$artist$tags$tag$name
+
+![Rstudio showing my real last.fm API](/images/Posts/2021/2021-06-12_Image6.png){: .center-image }
 
 With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. Mind that in my example code snip shown below has been set in this way because I am using the defaults values of Tagscanner, that my separator is ";" because I am in a Spanish computer, and I am forcing reading every column as a character and forcing the file encoding. 
 
