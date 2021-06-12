@@ -27,13 +27,13 @@ But Ricardo, shall I have any learning expectations from this post? Well, mostly
 
 ## Why classifying by Genre is complicated.
 
+![Library Statistic](/images/Posts/2021/2021-06-12_Image2.png){: .center-image }
+
 When I started this task I used my favourite search engine to see how can it be done. I ended up in some music forums and a lot of answers were that people gave up on classifying by genre. Why? Because genres are subjective. If I ask you who is the original artist of "Girls just wanna have fun", there is only one right answer: [Robert Hazard.](https://www.last.fm/music/Robert+Hazard/_/Girls+Just+Wanna+Have+Fun){:target="_blank"} You don't get a simple answer when doing the same question about the genre. If you are a fan of Electronic music you might want to tag all the different styles (House, Ambient, Disco, Dub, Electro Swing...) whilst for another person (me!) all those styles might go under the tag EDM (In my case, the EDM tag is to group modern electronica like Techno, House, etc., and differentiate them from classic electronic music like Tubular Bells or Michael Jean Jarre).
 
 Another problem is the gradualness of genres. Musicians have an inherent problem with making music that can be categorised into a nice simple genre. Those little bastards will try to have their own "style" and do you know how they do that? Yes, exactly, they got two genres and mix them (and not even 50%/50%). If a band now combines punk with metal. Is it punk? Is it metal? Is it a bird? Is it a plane? Is it a birdplane? This could not be a problem, but it collides with the set rule of only one genre per song.
 
 This leads to the following quandary, uniqueness. Some artists have managed to create a genre so specific that no other band in the world plays. This occurs more often than I would like it. (Which is none, I would like to happen *"none"* times!) Do I really want to classify Cartoons in the [tecnobilly](https://www.last.fm/tag/technobilly){:target="_blank"} tag? No, I don't, why anybody would like that? Plus it collides with each genre should have a decent pool of songs rule. A decision was taken, if some musician managed to invent a genre so specific that couldn't be assigned to a broader genre(a.k.a. piss me off), then, their songs will be exiled into the wretched genre of "other", and more likely they won't be played again!
-
-![Library Statistic](/images/Posts/2021/2021-06-12_Image2.png){: .center-image }
 
 Resuming, classifying genres ain't easy because of subjectivity, gradualness and uniqueness. So how did I solve this? Come up with a predefined list of genres. The list must have enough genres to successfully divide the music collection into sensible categories and adapt to my own criteria and library.
 
@@ -43,9 +43,9 @@ You don't know how many songs will you have in a genre until you start. This tra
 
 I am currently reiterating all the process and trying to divide **Pop** into other subgenres like **New Wave** (already done) or **electropop** (currently working on this).
 
-![The garbage man](/images/Posts/2021/2021-06-12_Image3.jpeg){: .center-image }
-
 ## Software to auto-sort by Genre
+
+![The garbage man](/images/Posts/2021/2021-06-12_Image3.jpeg){: .center-image }
 
 But can't someone else just do it? Technically yes, but it will be a subpar job. The subjectivity, graduality and uniqueness will come to and screw up with your plans of letting a tool work for you. But if you do not trust me you can go and test them by yourself. Do what I did, create a 50 songs sample (Trial periods are limited to a certain amount of songs) and check if you are happy with their results.
 
@@ -60,6 +60,8 @@ Do not get me wrong, the tools work quite alright, almost like magic. But there 
 ## Getting philosophical about music classification
 
 I decided to assign every artist to a genre (as opposed to classify each song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out)){:target="_blank"} would be dealt in a song to song basis.
+
+![Plato listening to some form songs](/images/Posts/2021/2021-06-12_Image5.png){: .center-image }
 
 But then I started to get philosophical. How can I determine what is Rock from what it isn't? Is it Aerosmith rocker than Dire Straits? But why make myself such a question when great thinkers have already discussed plenty of theories? So in a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_forms){:target="_blank"}, I decided to give to every genre a master song. The master song will act as an "Idea" or "Form" of the genre. Like it is the only true representation of that genre.
 
@@ -128,7 +130,9 @@ If you don't have R and Rstudio ready go download and install them. You will als
 	lastFM_API = "0123456789abcdef0123456789abcdef"
 	
 	# This function returns the JSON URL for certain Artist
-	build_artist_info <- function(artist,  api_key= lastFM_API, base = "http://ws.audioscrobbler.com/2.0/"){
+	build_artist_info <- function(artist,
+			api_key= lastFM_API,
+			base = "http://ws.audioscrobbler.com/2.0/"){
 		base <- param_set(base, "method", "artist.getInfo")
 		base <- param_set(base, "artist", URLencode(artist))
 		base <- param_set(base, "api_key", api_key)
@@ -150,7 +154,11 @@ This function will read the JSON, and convert it to an R format (list of lists).
 With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. Mind that in my example code snip shown below has been set in this way because I am using the defaults values of Tagscanner, that my separator is ";" because I am in a Spanish computer, and I am forcing reading every column as a character and forcing the file encoding. 
 
 	# Read the csv with the library information
-	tracklist = read.table(r"(B:\Documents\R\RMusicOrganiser\tracklist_MBID.csv)", header = FALSE, sep = ";", fileEncoding = "UTF-8-BOM", colClasses = rep("character",14))
+	tracklist = read.table(r"(B:\Doc...\tracklist.csv)",
+		header = FALSE,
+		sep = ";",
+		fileEncoding = "UTF-8-BOM",
+		colClasses = rep("character",14))
 	
 	# Get a list of Artists
 	UniqueArtistList = unique(tracklist$V2)
@@ -195,8 +203,6 @@ This piece of code is to get a data frame with the artist, the 5 genres and a sc
 		df3 = rbind(df3, expand_genre_todf(ArtistGenresList[i]))
 	}
 
-![Musicbee Screenshot](/images/Posts/2021/2021-06-12_Image4.png){: .center-image }
-
 The scoring system can be as complicated as you want, I decided to keep it simple (Lies!, I started doing an extremely complex scoring system that turned out to be rubbish, then went to the simple system). The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. The code shown below is a little bit more complicated than just comparing two string, I called it "the smarter string comparison". Don't judge me, I need to keep coming with those catchy names to keep you reading 
 
 Why the smarter string comparison? A simple string comparison between "hip-hop" and "Hip Hop" would give me a false, which I don't want. To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. If my Fortran90 teacher who (tried) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.
@@ -212,6 +218,8 @@ Why the smarter string comparison? A simple string comparison between "hip-hop" 
 		}
 	  }
 	}
+
+![Libre Office with the outcoming file](/images/Posts/2021/2021-06-12_Image4.png){: .center-image }
 
 And we can end up by writing this file into a CSV that we can open with your favourite calc sheet programs. 
 
