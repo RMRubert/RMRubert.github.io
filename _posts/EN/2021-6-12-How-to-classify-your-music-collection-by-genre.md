@@ -45,7 +45,7 @@ I am currently reiterating all the process and trying to divide **Pop** into oth
 
 ## Software to auto-sort by Genre
 
-![The garbage man](/images/Posts/2021/2021-06-12_Image3.jpeg){: .center-image }
+![The garbage man](/images/Posts/2021/2021-06-12_Image3.jpeg){ text-align: center; }
 
 But can't someone else just do it? Technically yes, but it will be a subpar job. The subjectivity, graduality and uniqueness will come to and screw up with your plans of letting a tool work for you. But if you do not trust me you can go and test them by yourself. Do what I did, create a 50 songs sample (Trial periods are limited to a certain amount of songs) and check if you are happy with their results.
 
@@ -59,7 +59,7 @@ Do not get me wrong, the tools work quite alright, almost like magic. But there 
 
 ## Getting philosophical about music classification
 
-I decided to assign every artist to a genre (as opposed to classify each song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out)){:target="_blank"} would be dealt in a song to song basis.
+I decided to assign every artist to a genre (as opposed to classify each song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out){:target="_blank"} would be dealt in a song to song basis.
 
 ![Plato listening to some form songs](/images/Posts/2021/2021-06-12_Image5.png){: .center-image }
 
@@ -95,7 +95,7 @@ Are you curious to know my list of "Form songs". There you have.
 | new age           | 2     | 4  | [Sally Oldfield – Mirrors](https://www.last.fm/music/Sally+Oldfield/_/Mirrors){:target="_blank"}                                |
 | new wave          | 234   |    | [Alphaville – Forever Young](https://www.last.fm/music/Alphaville/_/Forever+Young){:target="_blank"}                            |
 | oldies            | 584   |    | [The Foundations – Build Me Up Buttercup](https://www.last.fm/music/The+Foundations/_/Build+Me+up+Buttercup){:target="_blank"}  |
-| other             | 39    |    | Were exiled song come to die                                                                                  |
+| other             | 39    |    | Where exiled song come to die                                                                                  |
 | pop               | 1015  | 5  | [Coldplay – The Hardest Part](https://www.last.fm/music/Coldplay/_/The+Hardest+Part){:target="_blank"}                          |
 | psychedelic       | 2     | 4  | [? and The Mysterians – 96 Tears](https://www.last.fm/music/%3F+and+the+Mysterians/_/96+Tears){:target="_blank"}                |
 | punk              | 92    |    | [The Offspring – Pretty Fly](https://www.last.fm/music/The+Offspring/_/Pretty+Fly+(For+a+White+Guy)){:target="_blank"}          |
