@@ -5,49 +5,67 @@ category: EN
 tags: [Coding, R, Raspberry]
 ---
 
-![Musicbee Screenshot](/images/Posts/2020/2021-06-01_Image1.png){: .center-image }
+![Musicbee Screenshot](/images/Posts/2021/2021-06-12_Image1.png){: .center-image }
 
-I have been having a raspberry PI project in mind for way too long time which requires having my music library collection organised... by genre. Just so you know the raspberry PI project I have in mind is to have an old radio reconverted into a jukebox, but done in such a way that moving the dial would change to "other radio stations". Those radio stations will automatically choose a song and play it, and the way to select the song will be by a combination of genre and decade. This implies I **need to classify my music into few genres** (20 or 30 at much), each genre must have a decent pool of songs, and finally, every song/band **must have one and only one genre**. Seems easy, well, this task has consumed most of my free time since September 2020, and it isn't over yet!
+This post is about how did I organise my music library by genre. I have not done it for the sake of organisation (well, maybe a little), but because it is part of a bigger project. This (bigger) project is to have an old radio reconverted with a Raspberry PI in such a way that turning the dial will let the user choose different radio stations. Each radio station will play a set of songs, and it will be defined by a combination of genre and decade.
 
-In this post I will tell you what problems have I encountered, what is the current state of this titanic task and what thing would I have done differently.
+Because the organisation serves a purpose to the project, the classification had to be done with a set of rules (aka **The Radio Rules!**):
+1. Few genres. Between 15 and 25.
+2. Each genre should have a decent pool of songs. I do not want a radio playing 6 songs time after time, I already have KISS FM Spain for that.
+3. Each song must be categorised using only one genre.
 
-## Why classifying by Genre is complicated.
+Easy! Well, this task has consumed most of my free time since September 2020, and it isn't over yet!
 
-Musicians have an inherent problem with making music that can be categorised into a nice simple genre. Those little bastards will try to have their own "style" and do you know how they do that? Yes, exactly, they got two genres and mix them. If a band now combines punk with metal. Is it punk? Is it metal? Is it a bird? Is it a plane? Is it a birdplane? A nightmare! The answer is a nightmare!
+But Ricardo, shall I have any learning expectations from this post? Well, mostly no. This is a small resume of what you will find in the post:
+1. An explanation on why classifying by genre is pointless and most people have already given up.
+2. The currently existing software to automatise this task.
+3. Me ignoring every piece of software and instead, using Plato's theory to classify my library in a list of genres.
+4. How to get a CSV file with information about your library collection.
+5. How to use R and last.fm API to retrieve information about an artist genre (this is the only section in which, potentially, you will actually learn something)
 
 <!-- more -->
 
-Another common problem is that some artists have a really specific music tag for themselves. This occurs more often than I would like it. (Which is none, I would like to happen *"none"* times!) Do I really want to classify Cartoons in the [tecnobilly](https://www.last.fm/tag/technobilly){:target="_blank"} genre? No, I don't, why anybody would like that? You might as well name the genre after with the artist name (Which will happen too). A decision was taken, if some musician managed to invent a genre so specific that couldn't be assigned to a broader genre, then, their songs will be exiled into the wretched genre of "other", and more likely they won't be played again! (That is what you get for being special!)
+## Why classifying by Genre is complicated.
 
-Genres are also attached to what type of music does one hears, and, their own music collection. If someone is really passionate about electronic music, then it would be sensible to have several tags or genres for the different styles (House, Ambient, Disco, Electro Swing) whilst if you have just a few songs, you might want to classify them under Electronic/EDM, or even ignore the genre and assign it to another genre and call it a day.
+When I started this task I used my favourite search engine to see how can it be done. I ended up in some music forums and a lot of answers were that people gave up on classifying by genre. Why? Because genres are subjective. If I ask you who is the original artist of "Girls just wanna have fun", there is only one right answer: [Robert Hazard.](https://www.last.fm/music/Robert+Hazard/_/Girls+Just+Wanna+Have+Fun){:target="_blank"} You don't get a simple answer when doing the same question about the genre. If you are a fan of Electronic music you might want to tag all the different styles (House, Ambient, Disco, Dub, Electro Swing...) whilst for another person (me!) all those styles might go under the tag EDM (In my case, the EDM tag is to group modern electronica like Techno, House, etc., and differentiate them from classic electronic music like Tubular Bells or Michael Jean Jarre).
 
-![Library Statistic](/images/Posts/2020/2021-06-01_Image2.png){: .center-image }
+Another problem is the gradualness of genres. Musicians have an inherent problem with making music that can be categorised into a nice simple genre. Those little bastards will try to have their own "style" and do you know how they do that? Yes, exactly, they got two genres and mix them (and not even 50%/50%). If a band now combines punk with metal. Is it punk? Is it metal? Is it a bird? Is it a plane? Is it a birdplane? This could not be a problem, but it collides with the set rule of only one genre per song.
 
-So the first step to start is, **you need to come up with a list of genres**, and this list must be sensible with what you listen to. Because I had no idea how to start I used someone else already made list: the [ID3v1 list of genres](https://en.wikipedia.org/wiki/List_of_ID3v1_Genres). This provided me with a nice 80 tags to start with. Few tweaks here and there, in my case, remove the *Top 40* , and *Gospel* tag, and add some more needed tag to my collection. I created the EDM tag to group modern electronica (Techno, House, etc...) so it doesn't mix with classic electronic music (like Tubular Bells or Michael Jean Jarre).
+This leads to the following quandary, uniqueness. Some artists have managed to create a genre so specific that no other band in the world plays. This occurs more often than I would like it. (Which is none, I would like to happen *"none"* times!) Do I really want to classify Cartoons in the [tecnobilly](https://www.last.fm/tag/technobilly){:target="_blank"} tag? No, I don't, why anybody would like that? Plus it collides with each genre should have a decent pool of songs rule. A decision was taken, if some musician managed to invent a genre so specific that couldn't be assigned to a broader genre(a.k.a. piss me off), then, their songs will be exiled into the wretched genre of "other", and more likely they won't be played again!
 
-The main problem is that all this process is mostly iterative. You don't know how many songs will you have in a genre until you start. This translates into ending up with some genres with very few songs, and others including one-third of the music collection. In my case: **New Age**, **Psychedelic**, and **Vocal** contain less than 20 songs combined. Whilst, **Classic Rock** has 710 songs, **Pop** has 1015 songs, mind that the whole library contains 3982 songs.
+![Library Statistic](/images/Posts/2021/2021-06-12_Image2.png){: .center-image }
 
-I am currently reiterating all the process and trying to divide **Pop** into other subgenres like **New Wave** (already done), **electropop** (currently working on this).
+Resuming, classifying genres ain't easy because of subjectivity, gradualness and uniqueness. So how did I solve this? Come up with a predefined list of genres. The list must have enough genres to successfully divide the music collection into sensible categories and adapt to my own criteria and library.
 
-![Library Statistic](/images/Posts/2020/2021-06-01_Image3.png){: .center-image }
+So the first step to start is, **you need to come up with a list of genres**. My starting point was the [ID3v1 list of genres](https://en.wikipedia.org/wiki/List_of_ID3v1_Genres){:target="_blank"}. The list contains a nice 80 tags to start with. Remove some tags (Top 40, Gospel) and add some other tags (EDM). Whatever list you come with here, you will change it later. This process is mostly iterative.
+
+You don't know how many songs will you have in a genre until you start. This translates into ending up with some genres with very few songs, and others including one-third of the music collection. In my case: **New Age**, **Psychedelic**, and **Vocal** contain less than 20 songs combined. Whilst, **Classic Rock** has 710 songs, and the almighty **Pop** has 1015 songs. Classic Rock and Pop are 43% of my library.
+
+I am currently reiterating all the process and trying to divide **Pop** into other subgenres like **New Wave** (already done) or **electropop** (currently working on this).
+
+![The garbage man](/images/Posts/2021/2021-06-12_Image3.jpeg){: .center-image }
 
 ## Software to auto-sort by Genre
 
-But can't someone else just do it? Short answer: technically yes but it will suck. 
+But can't someone else just do it? Technically yes, but it will be a subpar job. The subjectivity, graduality and uniqueness will come to and screw up with your plans of letting a tool work for you. But if you do not trust me you can go and test them by yourself. Do what I did, create a 50 songs sample (Trial periods are limited to a certain amount of songs) and check if you are happy with their results.
 
-Long answer: There are several tools that will help you to organise your music collection. The most famous (and free) is the [Music Brainz Picard](https://picard.musicbrainz.org/){:target="_blank"}. This software will scan your music collection, assign them an ID using some kind of fancy Hash for music. Compare with their own community giant database collection and retrieve the information.
+I will recommend you to start with the free [Music Brainz Picard](https://picard.musicbrainz.org/){:target="_blank"}. This software will scan your music collection, assign them a "magic music hash id". And compare with their own community giant database collection to retrieve the information.
 
-The system does a decent job, but it will have some atrocious errors. This means that you should not use it unattended and believe everything it says unless your music collection has zero to no organisation beforehand. The truth is that you need to keep an eye on what it does, and doing so pretty much removes the main point of using an automatic tool.
+But Ricardo, what if I think that you are a case of long pockets and short arms? What if one could spend some of their hard-earned sterling pounds and exchange them for goods and services. Services like finding a tool that just does it? Well, good news is that there are plenty of paid [alternatives](https://alternativeto.net/software/musicbrainz-picard/?p=2){:target="_blank"}.
 
-What if you stop having long pockets and short arms? Instead, one could spend some of their hard-earned sterling pounds and find a tool that just does it? What is £100 in exchange for the plenty of hours (>200) of free time?
+Do not get me wrong, the tools work quite alright, almost like magic. But there are two problems: 
+1. They cannot work unattended, and if I need to revise everything they suggest me to do, the process is as slow as doing it by myself. 
+2. The way they work collides with my _three radio rules_.
 
-Well, good news is that there are plenty of paid [alternatives](https://alternativeto.net/software/musicbrainz-picard/?p=2){:target="_blank"}. TuneUp, Jaikoz, Metadatics... I tried the trial versions of the most popular alternatives with a "selected sample of songs", and see if I was happy with their job. I wasn't.
+## Getting philosophical about music classification
 
-## Assigning artist/songs to genre
+I decided to assign every artist to a genre (as opposed to classify each song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out)){:target="_blank"} would be dealt in a song to song basis.
 
-I decided to assign every artist to a genre (as opposed to choosing by song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out)){:target="_blank"} would be dealt in a song to song basis.
+But then I started to get philosophical. How can I determine what is Rock from what it isn't? Is it Aerosmith rocker than Dire Straits? But why make myself such a question when great thinkers have already discussed plenty of theories? So in a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_forms){:target="_blank"}, I decided to give to every genre a master song. The master song will act as an "Idea" or "Form" of the genre. Like it is the only true representation of that genre.
 
-In a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_forms){:target="_blank"}, I decided to give to every genre a master song. The master song will act as an "Idea" or "Form" of the genre. Like it is the only true representation of that genre. Any other song will be classified into the same genre _if they could be listened to in the same "Radio Station"_ than the master song. If not, they would need to go to another genre or be exiled into the "other" tag. Just for your amusement below is my list of "Form songs". 
+When I will have doubts about an artist being one or another genre, I will make myself the question, _if I was the Radio Station DJ of the genre, will I play it next to the master song?_ If they couldn't be played next to any master song, they would be exiled into the "other" tag.
+
+Are you curious to know my list of "Form songs". There you have.
 
 | Genre            | Songs |Info| Canción                    |
 |:----------------:|:-----:|:--:|:--------------------------:|
@@ -93,13 +111,15 @@ In a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_fo
 4. This genre will be removed due to having a small pool of songs.
 5. Pop has been quite an overused genre. I am (re-)reviewing it to reduce its size.
 
-## Getting some extra help before manual sorting
+## Less philosophy and more coding!
 
-The first step: get all the information from our music collection in a format we can import into R. [Tagscanner](https://www.xdlab.ru/en/){:target="_blank"} is our man. Scan your library, and in the export tab, save it as an "Excel friendly" CSV file. Don't forget to check the UTF-8 with DOM option. Mind that from this moment until you finish, you **must not modify your library by adding, removing or editing any file here**.
+I have written this post to teach philosophy and code in R... and I'm all out of theories.
 
-The second step: get a [last.fm API](https://www.last.fm/api){:target="_blank"} so we can call it from our R code. Sign in for an API request and get your API key, your API key is a hexadecimal number that should look similar to this one "0123456789abcdef0123456789abcdef". 
+We need to pass library info to R, so we need a CSV file with information about our library. [Tagscanner](https://www.xdlab.ru/en/){:target="_blank"} is our man. Scan your library, and in the export tab, save it as an "Excel friendly" CSV file. Don't forget to check the UTF-8 with DOM option. Mind that from this moment until you finish, you **must not modify your library by adding, removing or editing any file here**. 
 
-The third step: get R and Rstudio ready and install the urltools, jsonlite, memoise and curl packages. We will be creating some functions that will help us to retrieve information from last.fm database.
+Then we need a database to get information from. Get a [last.fm API](https://www.last.fm/api){:target="_blank"} so we can access their database and load it into our R code. Sign in for an API request and get your API key, your API key is a hexadecimal number that should look similar to this one "0123456789abcdef0123456789abcdef", and gives you permission to use their database. 
+
+If you don't have R and Rstudio ready go download and install them. You will also need the urltools and jsonlite libraries. We will be creating some functions that will help us to retrieve information from last.fm database.
 
 	library(urltools)
 	library(jsonlite)
@@ -117,9 +137,9 @@ The third step: get R and Rstudio ready and install the urltools, jsonlite, memo
 	}
 	
 
-The function: *build_artist_info(artist = "Aqua")* generates a URL pointing to the Artist requested (Aqua in this case) JSON file with information about it. If the artist doesn't exist it won't return anything. If you copy this URL into Firefox, you can take a look at the JSON file.
+The function: *build_artist_info(artist = "Aqua")* generates a URL pointing to the Artist requested (Aqua in this example) JSON file with information about them. If the artist doesn't exist it won't return anything. If you copy this URL into Firefox, you can take a look at the JSON file.
 
-But we don't need to load the JSON in firefox but in R. The way to do this is using the function fromJSON().
+But we don't need to load the JSON in firefox, we need the data to be in R. The way to do this is using the function fromJSON().
 
 	fromJSON(build_artist_info(artist = "Aqua"))
 
@@ -127,7 +147,7 @@ This function will read the JSON, and convert it to an R format (list of lists).
 
 	fromJSON(build_artist_info(artist = "Aqua"))$artist$tags$tag$name
 
-With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. Mind that in my example code I am using the defaults values of Tagscanner, that my separator is ";" because I am in a Spanish computer, and I am forcing reading every column as a character and forcing the file encoding. 
+With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. Mind that in my example code snip shown below has been set in this way because I am using the defaults values of Tagscanner, that my separator is ";" because I am in a Spanish computer, and I am forcing reading every column as a character and forcing the file encoding. 
 
 	# Read the csv with the library information
 	tracklist = read.table(r"(B:\Documents\R\RMusicOrganiser\tracklist_MBID.csv)", header = FALSE, sep = ";", fileEncoding = "UTF-8-BOM", colClasses = rep("character",14))
@@ -175,11 +195,11 @@ This piece of code is to get a data frame with the artist, the 5 genres and a sc
 		df3 = rbind(df3, expand_genre_todf(ArtistGenresList[i]))
 	}
 
-![Musicbee Screenshot](/images/Posts/2020/2021-06-01_Image4.png){: .center-image }
+![Musicbee Screenshot](/images/Posts/2021/2021-06-12_Image4.png){: .center-image }
 
-The scoring system can be as complicated as you want, I decided to keep it simple. The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. The code below here is a little bit more complicated than just comparing a string, but in the end, it is just a smarter string comparison. 
+The scoring system can be as complicated as you want, I decided to keep it simple (Lies!, I started doing an extremely complex scoring system that turned out to be rubbish, then went to the simple system). The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. The code shown below is a little bit more complicated than just comparing two string, I called it "the smarter string comparison". Don't judge me, I need to keep coming with those catchy names to keep you reading 
 
-A simple string comparison between "hip-hop" and "Hip Hop" would give me a false, which I don't want. To solve this, I am converting everything into capital letters, and using a coefficient between the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. 
+Why the smarter string comparison? A simple string comparison between "hip-hop" and "Hip Hop" would give me a false, which I don't want. To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. If my Fortran90 teacher who (tried) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.
 
 	# Read our list of genres
 	genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
@@ -199,4 +219,4 @@ And we can end up by writing this file into a CSV that we can open with your fav
 				sep = ",",
 				row.names = FALSE)
 
-From here, there is a lot of listening to the music, assign a genre, rinse and repeat. Several months later,  if you manage to finish this task instead of playing the three Mass Effect games in a row, you would need to update the original tracklist.csv (the one exported in the first step). Update the genre column with your new genres, and use TagScanner to import the information into the library. Hence the importance of not updating, adding or removing songs, or the whole process would be screwed.
+From here, there is a lot of listening to the music, assign a genre, rinse and repeat. Several months later, if you manage to finish this task instead of playing the three Mass Effect games in a row (cough..., cough...), you would need to update the original tracklist.csv. Update the genre column with your new genres, and use TagScanner to import the information into the library. Hence the importance of not updating, adding or removing songs, or the whole process would be screwed.
