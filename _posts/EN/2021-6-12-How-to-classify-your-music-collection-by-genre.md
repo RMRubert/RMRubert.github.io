@@ -45,7 +45,9 @@ I am currently reiterating all the process and trying to divide **Pop** into oth
 
 ## Software to auto-sort by Genre
 
+{:refdef: style="text-align: center;"}
 ![The garbage man](/images/Posts/2021/2021-06-12_Image3.jpeg){:.center-image }
+{: refdef}
 
 But can't someone else just do it? Technically yes, but it will be a subpar job. The subjectivity, graduality and uniqueness will come to and screw up with your plans of letting a tool work for you. But if you do not trust me you can go and test them by yourself. Do what I did, create a 50 songs sample (Trial periods are limited to a certain amount of songs) and check if you are happy with their results.
 
