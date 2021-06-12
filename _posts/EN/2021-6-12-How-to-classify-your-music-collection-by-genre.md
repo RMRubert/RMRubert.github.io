@@ -64,7 +64,7 @@ Do not get me wrong, the tools work quite alright, almost like magic. But there 
 
 ## Getting philosophical about music classification
 
-I decided to assign every artist to a genre (as opposed to classify each song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out){:target="_blank"} would be dealt in a song to song basis.
+I decided to assign every artist to a genre (as opposed to classify each song). The only exception in my library is Dover, they started as [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and moved to [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out){:target="_blank"}.
 
 {:refdef: style="text-align: center;"}
 ![Plato listening to some form songs](/images/Posts/2021/2021-06-12_Image5.png){: .center-image }
