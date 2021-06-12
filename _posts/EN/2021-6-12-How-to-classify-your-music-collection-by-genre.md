@@ -4,8 +4,9 @@ title: How to classify your music collection by genre. The Ricardo approach.
 category: EN
 tags: [Music, Coding, R]
 ---
-
+{:refdef: style="text-align: center;"}
 ![Musicbee Screenshot](/images/Posts/2021/2021-06-12_Image1.png){: .center-image }
+{: refdef}
 
 This post is about how did I organise my music library by genre. I have not done it for the sake of organisation (well, maybe a little), but because it is part of a bigger project. This (bigger) project is to have an old radio reconverted with a Raspberry PI in such a way that turning the dial will let the user choose different radio stations. Each radio station will play a set of songs, and it will be defined by a combination of genre and decade.
 
@@ -27,7 +28,9 @@ But Ricardo, shall I have any learning expectations from this post? Well, mostly
 
 ## Why classifying by Genre is complicated.
 
+{:refdef: style="text-align: center;"}
 ![Library Statistic](/images/Posts/2021/2021-06-12_Image2.png){: .center-image }
+{: refdef}
 
 When I started this task I used my favourite search engine to see how can it be done. I ended up in some music forums and a lot of answers were that people gave up on classifying by genre. Why? Because genres are subjective. If I ask you who is the original artist of "Girls just wanna have fun", there is only one right answer: [Robert Hazard.](https://www.last.fm/music/Robert+Hazard/_/Girls+Just+Wanna+Have+Fun){:target="_blank"} You don't get a simple answer when doing the same question about the genre. If you are a fan of Electronic music you might want to tag all the different styles (House, Ambient, Disco, Dub, Electro Swing...) whilst for another person (me!) all those styles might go under the tag EDM (In my case, the EDM tag is to group modern electronica like Techno, House, etc., and differentiate them from classic electronic music like Tubular Bells or Michael Jean Jarre).
 
@@ -63,7 +66,9 @@ Do not get me wrong, the tools work quite alright, almost like magic. But there 
 
 I decided to assign every artist to a genre (as opposed to classify each song). And only if a certain artist have two very different genres in their career (Dover for example: [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out){:target="_blank"} would be dealt in a song to song basis.
 
+{:refdef: style="text-align: center;"}
 ![Plato listening to some form songs](/images/Posts/2021/2021-06-12_Image5.png){: .center-image }
+{: refdef}
 
 But then I started to get philosophical. How can I determine what is Rock from what it isn't? Is it Aerosmith rocker than Dire Straits? But why make myself such a question when great thinkers have already discussed plenty of theories? So in a nod to Plato's [theory of forms](https://en.wikipedia.org/wiki/Theory_of_forms){:target="_blank"}, I decided to give to every genre a master song. The master song will act as an "Idea" or "Form" of the genre. Like it is the only true representation of that genre.
 
@@ -117,7 +122,9 @@ Are you curious to know my list of "Form songs". There you have.
 
 ## Less philosophy and more coding!
 
+{:refdef: style="text-align: center;"}
 ![Time to code!](/images/Posts/2021/2021-06-12_Image7.png){: .center-image }
+{: refdef}
 
 I have written this post to teach philosophy and code in R... and I'm all out of theories.
 
@@ -155,7 +162,9 @@ This function will read the JSON, and convert it to an R format (list of lists).
 
 	fromJSON(build_artist_info(artist = "Aqua"))$artist$tags$tag$name
 
+{:refdef: style="text-align: center;"}
 ![Rstudio showing my real last.fm API](/images/Posts/2021/2021-06-12_Image6.png){: .center-image }
+{: refdef}
 
 With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. Mind that in my example code snip shown below has been set in this way because I am using the defaults values of Tagscanner, that my separator is ";" because I am in a Spanish computer, and I am forcing reading every column as a character and forcing the file encoding. 
 
@@ -225,7 +234,9 @@ Why the smarter string comparison? A simple string comparison between "hip-hop" 
 	  }
 	}
 
+{:refdef: style="text-align: center;"}
 ![Libre Office with the outcoming file](/images/Posts/2021/2021-06-12_Image4.png){: .center-image }
+{: refdef}
 
 And we can end up by writing this file into a CSV that we can open with your favourite calc sheet programs. 
 
