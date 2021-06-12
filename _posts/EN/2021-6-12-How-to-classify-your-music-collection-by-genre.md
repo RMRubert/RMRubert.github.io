@@ -36,7 +36,7 @@ When I started this task I used my favourite search engine to see how can it be 
 
 Another problem is the gradualness of genres. Musicians have an inherent problem with making music that can be categorised into a nice simple genre. Those little bastards will try to have their own "style" and do you know how they do that? Yes, exactly, they got two genres and mix them (and not even 50%/50%). If a band now combines punk with metal. Is it punk? Is it metal? Is it a bird? Is it a plane? Is it a birdplane? This could not be a problem, but it collides with the set rule of only one genre per song.
 
-This leads to the following quandary, uniqueness. Some artists have managed to create a genre so specific that no other band in the world plays. This occurs more often than I would like it. (Which is none, I would like to happen *"none"* times!) Do I really want to classify Cartoons in the [tecnobilly](https://www.last.fm/tag/technobilly){:target="_blank"} tag? No, I don't, why anybody would like that? Plus it collides with each genre should have a decent pool of songs rule. A decision was taken, if some musician managed to invent a genre so specific that couldn't be assigned to a broader genre(a.k.a. piss me off), then, their songs will be exiled into the wretched genre of "other", and more likely they won't be played again!
+This leads to the following quandary, uniqueness. Some artists have managed to create a genre so specific that no other band in the world plays. This occurs more often than I would like it. (Which is none, I would like to happen *"none"* times!) Do I really want to classify Cartoons in the [technobilly](https://www.last.fm/tag/technobilly){:target="_blank"} tag? No, I don't, why anybody would like that? Plus it collides with each genre should have a decent pool of songs rule. A decision was taken, if some musician managed to invent a genre so specific that couldn't be assigned to a broader genre(a.k.a. piss me off), then, their songs will be exiled into the wretched genre of "other", and more likely they won't be played again!
 
 Resuming, classifying genres ain't easy because of subjectivity, gradualness and uniqueness. So how did I solve this? Come up with a predefined list of genres. The list must have enough genres to successfully divide the music collection into sensible categories and adapt to my own criteria and library.
 
@@ -64,7 +64,7 @@ Do not get me wrong, the tools work quite alright, almost like magic. But there 
 
 ## Getting philosophical about music classification
 
-I decided to assign every artist to a genre (as opposed to classify each song). The only exception in my library is Dover, they started as [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} and moved to [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out){:target="_blank"}.
+I decided to assign every artist to a genre (as opposed to classify each song). The only exception in my library is the artist Dover, they started making [rock](https://www.last.fm/music/Dover/_/Devil+Came+to+Me){:target="_blank"} music and later on (with plenty of controverse) moved to [electropop](https://www.last.fm/music/Dover/_/Let+Me+Out){:target="_blank"}.
 
 {:refdef: style="text-align: center;"}
 ![Plato listening to some form songs](/images/Posts/2021/2021-06-12_Image5.png){: .center-image }
@@ -128,11 +128,11 @@ Are you curious to know my list of "Form songs". There you have.
 
 I have written this post to teach philosophy and code in R... and I'm all out of theories.
 
-We need to pass library info to R, so we need a CSV file with information about our library. [Tagscanner](https://www.xdlab.ru/en/){:target="_blank"} is our man. Scan your library, and in the export tab, save it as an "Excel friendly" CSV file. Don't forget to check the UTF-8 with DOM option. Mind that from this moment until you finish, you **must not modify your library by adding, removing or editing any file here**. 
+We need to pass our music library info to R, so we need a CSV file with information about our library. [Tagscanner](https://www.xdlab.ru/en/){:target="_blank"} is our man. Scan your library, and in the export tab, save it as an "Excel friendly" CSV file. Don't forget to check the UTF-8 with DOM option. Mind that from this moment until you finish, you **must not modify your library by adding, removing or editing any file here**. 
 
 Then we need a database to get information from. Get a [last.fm API](https://www.last.fm/api){:target="_blank"} so we can access their database and load it into our R code. Sign in for an API request and get your API key, your API key is a hexadecimal number that should look similar to this one "0123456789abcdef0123456789abcdef", and gives you permission to use their database. 
 
-If you don't have R and Rstudio ready go download and install them. You will also need the urltools and jsonlite libraries. We will be creating some functions that will help us to retrieve information from last.fm database.
+If you don't have R and Rstudio ready on your computer, stop making bad decisions in your life and go download and install them. You will also need the urltools and jsonlite libraries. We will be creating some functions that will help us to retrieve information from last.fm database.
 
 	library(urltools)
 	library(jsonlite)
@@ -152,9 +152,7 @@ If you don't have R and Rstudio ready go download and install them. You will als
 	}
 	
 
-The function: *build_artist_info(artist = "Aqua")* generates a URL pointing to the Artist requested (Aqua in this example) JSON file with information about them. If the artist doesn't exist it won't return anything. If you copy this URL into Firefox, you can take a look at the JSON file.
-
-But we don't need to load the JSON in firefox, we need the data to be in R. The way to do this is using the function fromJSON().
+The function: **build_artist_info(artist = "Aqua")** generates a URL pointing to the Artist requested JSON file with information about them. If the artist doesn't exist, you will get an URL but it won't return anything. Copy this URL into Firefox so you can take a look at the JSON file and familiarise yourself with it. But don't forget that we don't need to load the JSON in firefox. We need the data to be in R. The way to do this is using the function fromJSON().
 
 	fromJSON(build_artist_info(artist = "Aqua"))
 
@@ -166,7 +164,7 @@ This function will read the JSON, and convert it to an R format (list of lists).
 ![Rstudio showing my real last.fm API](/images/Posts/2021/2021-06-12_Image6.png){: .center-image }
 {: refdef}
 
-With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. Mind that in my example code snip shown below has been set in this way because I am using the defaults values of Tagscanner, that my separator is ";" because I am in a Spanish computer, and I am forcing reading every column as a character and forcing the file encoding. 
+With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. There are a few peculiarities on my example code snip shown below. I am not reading the first row as column names (Tagscanner default output), that my separator is ";" (because I am in a Spanish computer), I am forcing reading every column as a character (to avoid having to deal with factors) and forcing the file encoding (to UTF-8-DOM, as I asked you before). 
 
 	# Read the csv with the library information
 	tracklist = read.table(r"(B:\Doc...\tracklist.csv)",
@@ -183,7 +181,7 @@ With our new superb functions, we are ready to import the tracklist from step 1 
 
 Depending on the size of your artist list, this command can take a while to run, so it wouldn't hurt trying in a subset of artists first. You will end up with a list of artist, which contains a list of 5 tags, or an empty list if they couldn't find the artist (likely you wrote the artist name incorrectly). 
 
-At this point, I decided to code some really fancy scripts to auto-tag everything based on few rules (like checking decade and genre with my list of genres, and prioritising one tag over others tag, condense them into a single tag, etc...). Remember what I said about the tools that help you doing the classification? Yes, they suck! Well, turns out that my script was doing a subpar job too. Chances are that you end up having to review all information so I decided to export all info into a spreadsheet instead, and go fully manual from here.
+At this point, I decided to code some really fancy scripts to auto-tag everything based on few rules (like checking decade and genre with my list of genres, and prioritising one tag over others tag, condense them into a single tag, etc...). Remember what I said about the tools that help you doing the classification? Yes, they suck! Well, turns out that my script was doing a subpar job too. Chances are that you end up having to review all information so I decided to export all info into a spreadsheet instead, and go fully manual from there.
 
 This piece of code is to get a data frame with the artist, the 5 genres and a score for each one (starting at 0). The score should help you decide which genre is more suitable, more details below.
 
@@ -218,9 +216,9 @@ This piece of code is to get a data frame with the artist, the 5 genres and a sc
 		df3 = rbind(df3, expand_genre_todf(ArtistGenresList[i]))
 	}
 
-The scoring system can be as complicated as you want, I decided to keep it simple (Lies!, I started doing an extremely complex scoring system that turned out to be rubbish, then went to the simple system). The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. The code shown below is a little bit more complicated than just comparing two string, I called it "the smarter string comparison". Don't judge me, I need to keep coming with those catchy names to keep you reading 
+The scoring system can be as complicated as you want, I decided to keep it simple (Lies!, I started doing an extremely complex scoring system that turned out to be rubbish, then went to the simple system). The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. How do we do that? String comparison! Well almost that. The code shown below is a little bit more complicated than just comparing two strings, I called it "the smarter string comparison". Don't judge me, I need to keep coming with those catchy names to keep you reading 
 
-Why the smarter string comparison? A simple string comparison between "hip-hop" and "Hip Hop" would give me a false, which I don't want. To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. If my Fortran90 teacher who (tried) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.
+Why the smarter string comparison? A simple string comparison between "hip-hop" and "Hip Hop" would give me a false, which I don't want. To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. If my Fortran90 teacher who (tried to) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.
 
 	# Read our list of genres
 	genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
@@ -238,7 +236,7 @@ Why the smarter string comparison? A simple string comparison between "hip-hop" 
 ![Libre Office with the outcoming file](/images/Posts/2021/2021-06-12_Image4.png){: .center-image }
 {: refdef}
 
-And we can end up by writing this file into a CSV that we can open with your favourite calc sheet programs. 
+And we can end up by writing this file into a CSV that we can open with your favourite spreadsheet program. 
 
 	write.table(df3, file = r"(B:\Documentos\GitHub\RMusicOrganiser\Artist_Genre.csv)",
 				sep = ",",
