@@ -76,7 +76,7 @@ When I will have doubts about an artist being one or another genre, I will make 
 
 Are you curious to know my list of "Form songs". There you have.
 
-| Genre            | Songs |Info| Canción                    |
+| Genre            | Songs |Info| Form Song                  |
 |:----------------:|:-----:|:--:|:--------------------------:|
 | alternative rock  | 393   |    | [Muse – Resistance](https://www.last.fm/music/Muse/_/Resistance){:target="_blank"}                                              |
 | ambient           | 19    |    | [Mauro Picotto – Adiemus](https://www.last.fm/music/Mauro+Picotto/_/Adiemus){:target="_blank"}                                  |
