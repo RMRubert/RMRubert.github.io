@@ -29,7 +29,7 @@ On the artistic side of thing I enjoy drawing and making [old style maps]({{ sit
 
 ## Drawing
 
-You could see some of my drawings if I manage to scan them.
+You could see some of my drawings if I manage to scan them. Unfortunately, due to covid reasons I haven't got access neither to my drawings nor a scanner.
 
 <!-- 
 ### Contact me
