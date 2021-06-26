@@ -134,31 +134,36 @@ Then we need a database to get information from. Get a [last.fm API](https://www
 
 If you don't have R and Rstudio ready on your computer, stop making bad decisions in your life and go download and install them. You will also need the urltools and jsonlite libraries. We will be creating some functions that will help us to retrieve information from last.fm database.
 
-	library(urltools)
-	library(jsonlite)
-	
-	# Add your Last.fm API Here
-	lastFM_API = "0123456789abcdef0123456789abcdef"
-	
-	# This function returns the JSON URL for certain Artist
-	build_artist_info <- function(artist,
-			api_key= lastFM_API,
-			base = "http://ws.audioscrobbler.com/2.0/"){
-		base <- param_set(base, "method", "artist.getInfo")
-		base <- param_set(base, "artist", URLencode(artist))
-		base <- param_set(base, "api_key", api_key)
-		base <- param_set(base, "format", "json")
-		return(base)
-	}
-	
+```R
+library(urltools)
+library(jsonlite)
+
+# Add your Last.fm API Here
+lastFM_API = "0123456789abcdef0123456789abcdef"
+
+# This function returns the JSON URL for certain Artist
+build_artist_info <- function(artist,
+		api_key= lastFM_API,
+		base = "http://ws.audioscrobbler.com/2.0/"){
+	base <- param_set(base, "method", "artist.getInfo")
+	base <- param_set(base, "artist", URLencode(artist))
+	base <- param_set(base, "api_key", api_key)
+	base <- param_set(base, "format", "json")
+	return(base)
+}
+```
 
 The function: **build_artist_info(artist = "Aqua")** generates a URL pointing to the Artist requested JSON file with information about them. If the artist doesn't exist, you will get an URL but it won't return anything. Copy this URL into Firefox so you can take a look at the JSON file and familiarise yourself with it. But don't forget that we don't need to load the JSON in firefox. We need the data to be in R. The way to do this is using the function fromJSON().
 
+```R
 	fromJSON(build_artist_info(artist = "Aqua"))
+```
 
 This function will read the JSON, and convert it to an R format (list of lists). Don't hesitate to save this into a dummy variable and check the info in the environment panel of Rstudio, it shouldn't differ from what you saw on Firefox. To access the top 5 last.fm genre is as easy as navigating through the data to:
 
+```R
 	fromJSON(build_artist_info(artist = "Aqua"))$artist$tags$tag$name
+```
 
 {:refdef: style="text-align: center;"}
 ![Rstudio showing my real last.fm API](/images/Posts/2021/2021-06-12_Image6.png){: .center-image }
@@ -166,18 +171,20 @@ This function will read the JSON, and convert it to an R format (list of lists).
 
 With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn't give one. There are a few peculiarities on my example code snip shown below. I am not reading the first row as column names (Tagscanner default output), that my separator is ";" (because I am in a Spanish computer), I am forcing reading every column as a character (to avoid having to deal with factors) and forcing the file encoding (to UTF-8-DOM, as I asked you before). 
 
-	# Read the csv with the library information
-	tracklist = read.table(r"(B:\Doc...\tracklist.csv)",
-		header = FALSE,
-		sep = ";",
-		fileEncoding = "UTF-8-BOM",
-		colClasses = rep("character",14))
-	
-	# Get a list of Artists
-	UniqueArtistList = unique(tracklist$V2)
-	
-	# For each artist, provide me with the 5 top genre tags
-	ArtistGenresList = sapply( UniqueArtistList, function(x){fromJSON(build_artist_info(x))$artist$tags$tag$name})
+```R
+# Read the csv with the library information
+tracklist = read.table(r"(B:\Doc...\tracklist.csv)",
+	header = FALSE,
+	sep = ";",
+	fileEncoding = "UTF-8-BOM",
+	colClasses = rep("character",14))
+
+# Get a list of Artists
+UniqueArtistList = unique(tracklist$V2)
+
+# For each artist, provide me with the 5 top genre tags
+ArtistGenresList = sapply( UniqueArtistList, function(x){fromJSON(build_artist_info(x))$artist$tags$tag$name})
+```
 
 Depending on the size of your artist list, this command can take a while to run, so it wouldn't hurt trying in a subset of artists first. You will end up with a list of artist, which contains a list of 5 tags, or an empty list if they couldn't find the artist (likely you wrote the artist name incorrectly). 
 
@@ -185,52 +192,56 @@ At this point, I decided to code some really fancy scripts to auto-tag everythin
 
 This piece of code is to get a data frame with the artist, the 5 genres and a score for each one (starting at 0). The score should help you decide which genre is more suitable, more details below.
 
-	# Create Empty data.frame
-	df3 = data.frame()
-	
-	# Function to expand data
-	expand_genre_todf <- function(x){
-		y = unlist(x)
-		if (length(y) == 5) {
-			res = data.frame(Artist = names(x),
-					genre1 = y[1],F1 = 0,
-					genre2 = y[2],F2 = 0,
-					genre3 = y[3],F3 = 0,
-					genre4 = y[4],F4 = 0,
-					genre5 = y[5],F5 = 0,
-					row.names = NULL)
-		} else {
-			res = data.frame(Artist = names(x),
-					genre1 = NA,F1 = 0,
-					genre2 = NA,F2 = 0,
-					genre3 = NA,F3 = 0,
-					genre4 = NA,F4 = 0,
-					genre5 = NA,F5 = 0,
-					row.names = NULL)
-		}
-		return(res)
+```R
+# Create Empty data.frame
+df3 = data.frame()
+
+# Function to expand data
+expand_genre_todf <- function(x){
+	y = unlist(x)
+	if (length(y) == 5) {
+		res = data.frame(Artist = names(x),
+			genre1 = y[1],F1 = 0,
+			genre2 = y[2],F2 = 0,
+			genre3 = y[3],F3 = 0,
+			genre4 = y[4],F4 = 0,
+			genre5 = y[5],F5 = 0,
+			row.names = NULL)
+	} else {
+		res = data.frame(Artist = names(x),
+			genre1 = NA,F1 = 0,
+			genre2 = NA,F2 = 0,
+			genre3 = NA,F3 = 0,
+			genre4 = NA,F4 = 0,
+			genre5 = NA,F5 = 0,
+			row.names = NULL)
 	}
-	
-	# Build dataframe
-	for (i in 1:length(ArtistGenresList)) {
-		df3 = rbind(df3, expand_genre_todf(ArtistGenresList[i]))
-	}
+	return(res)
+}
+
+# Build dataframe
+for (i in 1:length(ArtistGenresList)) {
+	df3 = rbind(df3, expand_genre_todf(ArtistGenresList[i]))
+}
+```
 
 The scoring system can be as complicated as you want, I decided to keep it simple (Lies!, I started doing an extremely complex scoring system that turned out to be rubbish, then went to the simple system). The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. How do we do that? String comparison! Well almost that. The code shown below is a little bit more complicated than just comparing two strings, I called it "the smarter string comparison". Don't judge me, I need to keep coming with those catchy names to keep you reading 
 
 Why the smarter string comparison? A simple string comparison between "hip-hop" and "Hip Hop" would give me a false, which I don't want. To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. If my Fortran90 teacher who (tried to) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.
 
-	# Read our list of genres
-	genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
-	# Add filtering
-	for (i in c(2,4,6,8,10)){
-	  for (j in 1:nrow(df3)){
-		xg = toupper(df3[j,i])
-		if (!is.na(xg)){
-		  if (any(adist(xg,toupper(genrelist))/nchar(xg) < 0.2)) {df3[j,i+1]=1}
-		}
-	  }
+```R
+# Read our list of genres
+genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
+# Add filtering
+for (i in c(2,4,6,8,10)){
+  for (j in 1:nrow(df3)){
+	xg = toupper(df3[j,i])
+	if (!is.na(xg)){
+	  if (any(adist(xg,toupper(genrelist))/nchar(xg) < 0.2)) {df3[j,i+1]=1}
 	}
+  }
+}
+```
 
 {:refdef: style="text-align: center;"}
 ![Libre Office with the outcoming file](/images/Posts/2021/2021-06-12_Image4.png){: .center-image }
@@ -240,8 +251,8 @@ And we can end up by writing this file into a CSV that we can open with your fav
 
 ```R
 write.table(df3, file = r"(B:\Documentos\GitHub\RMusicOrganiser\Artist_Genre.csv)",
-			sep = ",",
-			row.names = FALSE)
+	sep = ",",
+	row.names = FALSE)
 ```
 
 From here, there is a lot of listening to the music, assign a genre, rinse and repeat. Several months later, if you manage to finish this task instead of playing the three Mass Effect games in a row (cough..., cough...), you would need to update the original tracklist.csv. Update the genre column with your new genres, and use TagScanner to import the information into the library. Hence the importance of not updating, adding or removing songs, or the whole process would be screwed.
