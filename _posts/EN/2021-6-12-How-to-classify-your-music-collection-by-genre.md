@@ -231,7 +231,10 @@ Why the smarter string comparison? A simple string comparison between "hip-hop" 
 
 ```R
 # Read our list of genres
-genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)", header = FALSE, sep = ",", fileEncoding = "UTF-8")$V1
+genrelist = read.table(r"(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)",
+	header = FALSE,
+	sep = ",",
+	fileEncoding = "UTF-8")$V1
 # Add filtering
 for (i in c(2,4,6,8,10)){
   for (j in 1:nrow(df3)){
