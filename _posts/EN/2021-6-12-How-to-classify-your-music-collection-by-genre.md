@@ -238,8 +238,10 @@ Why the smarter string comparison? A simple string comparison between "hip-hop" 
 
 And we can end up by writing this file into a CSV that we can open with your favourite spreadsheet program. 
 
-	write.table(df3, file = r"(B:\Documentos\GitHub\RMusicOrganiser\Artist_Genre.csv)",
-				sep = ",",
-				row.names = FALSE)
+```R
+write.table(df3, file = r"(B:\Documentos\GitHub\RMusicOrganiser\Artist_Genre.csv)",
+			sep = ",",
+			row.names = FALSE)
+```
 
 From here, there is a lot of listening to the music, assign a genre, rinse and repeat. Several months later, if you manage to finish this task instead of playing the three Mass Effect games in a row (cough..., cough...), you would need to update the original tracklist.csv. Update the genre column with your new genres, and use TagScanner to import the information into the library. Hence the importance of not updating, adding or removing songs, or the whole process would be screwed.
