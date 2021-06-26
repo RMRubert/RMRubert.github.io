@@ -153,7 +153,7 @@ build_artist_info <- function(artist,
 }
 ```
 
-The function: **build_artist_info(artist = "Aqua")** generates a URL pointing to the Artist requested JSON file with information about them. If the artist doesn't exist, you will get an URL but it won't return anything. Copy this URL into Firefox so you can take a look at the JSON file and familiarise yourself with it. But don't forget that we don't need to load the JSON in firefox. We need the data to be in R. The way to do this is using the function fromJSON().
+The function: `build_artist_info(artist = "Aqua")` generates a URL pointing to the Artist requested JSON file with information about them. If the artist doesn't exist, you will get an URL but it won't return anything. Copy this URL into Firefox so you can take a look at the JSON file and familiarise yourself with it. But don't forget that we don't need to load the JSON in firefox. We need the data to be in R. The way to do this is using the function fromJSON().
 
 ```R
 	fromJSON(build_artist_info(artist = "Aqua"))
