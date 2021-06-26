@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Tik Tak Toe in Fortran90. My first IA
-category: EN
-published: false
+category: DRAFT
 tags: [Coding, Fortran90]
 ---
 {:refdef: style="text-align: center;"}
