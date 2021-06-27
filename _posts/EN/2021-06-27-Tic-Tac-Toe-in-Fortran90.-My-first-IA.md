@@ -5,7 +5,7 @@ draft: true
 tags: [Coding, Fortran90]
 ---
 {:refdef: style="text-align: center;"}
-![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/TTT-01.jpg){: .center-image }
+![Parrot - Machine learning algorith comparison meme](/images/Posts/2021/Tic-Tac-Toe/TTT-01.jpg){: .center-image }
 {: refdef}
 
 I was discussing with a friend the differences between a machine learning algorithm and a parrot. The conversation pivoted into artificial intelligence and how once I created a program able to play Tic-Tac-Toe.
@@ -21,21 +21,23 @@ I have tested the code and I can guarantee that gfortran, Fortran PowerStation 4
 <!-- more -->
 
 {:refdef: style="text-align: center;"}
-![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/Flowchart-02.SVG)
+![Code flowchart](/images/Posts/2021/Tic-Tac-Toe/Flowchart-02.SVG)
+*Flowchart of how the game works.*
 {: refdef}
 
 As the flow chart shows, the code is very simple:
- * it asks you if you want to start
- * in the human's turn, it asks to introduce a pair of integer separated by a comma: row, column
- * in the computer's turn,
-  * it tries to win, if not
-  * it tries not to lose, if not
-computes the best position and place the token there
++ it asks you if you want to start
++ in the human's turn, it asks to introduce a pair of integer separated by a comma: row, column
++ in the computer's turn,
+  - it tries to win, if not
+  - it tries not to lose, if not
+  - computes the best position and place the token there
 
 Human always plays with circles, the computer plays with crosses. The board is formed by a 3x3 array of integers. If there is no token in a position, that position contains a 0. If the human places a token, the position's value is updated with a 1. If it is the computer that places a token, that position's value is updated with 4.
 
 {:refdef: style="text-align: center;"}
-![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/RCD-System-03.SVG)
+![Example of RCD](/images/Posts/2021/Tic-Tac-Toe/RCD-System-03.SVG)
+*Example of how the algorithm sees the board and the RCD vector.*
 {: refdef}
 
 Why ones and fours? As the board is 3x3, I can compute the sum of every row (S1, S2, S3), every column (S4, S5, S6) and every diagonal (S7, S8). We call this vector with the Sums of every Row-Col-Diag, RCD sum vector. RCD is called SS (Sumas del Sistema) in the code, remind the code is in Spanish. RCD is what the computer uses to know how the game is going.
@@ -43,16 +45,13 @@ Why ones and fours? As the board is 3x3, I can compute the sum of every row (S1,
 If at the computer's turn, any RCD value (S1 - S8) is eight. The algorithm sees there is a possible victory. Similarly, if any RCD value is two, the computer knows that its opponent could win in the next turn. In the same way, if any RCD value is 3 or 12, then somebody has won and the game is over.
 
 {:refdef: style="text-align: center;"}
-![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/RCD-System-Win-04.SVG)
+![RCD examples for winning and losing](/images/Posts/2021/Tic-Tac-Toe/RCD-System-Win-04.SVG)
+*The RCD sum vector is used to check the board status.*
 {: refdef}
 
 What is more tricky is to figure out where to place when there is no possibility to immediately win or lose. If you take the time to read the code (which nobody will do because ain't nobody got time for that) you will notice that I created two subroutines to deal with this situation. You could use one or another by commenting/uncommenting lines 197/198.
 
 The first subroutine is called MJ() (it stands for Mejor Jugada, which means the best move in Spanish). MJ() was my first attempt at solving this problem. It does several things wrongly. MJ() works by giving a score to each cell based on the even values of the RCD vector. Odd values are penalised because they contain an enemy token.
-
-{:refdef: style="text-align: center;"}
-![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/Slide-05.SVG)
-{: refdef}
 
 What is wrong with MJ()? 
 Well, it is unable to predict if a cell has more chances to win than another.
@@ -62,7 +61,8 @@ The combination of both errors lets the user hoodwink the computer if it permits
 Subroutine MJ() was rubbish, but it had some part to play in it, for good or evil, any future function must prioritise cells with more win conditions even with an empty board. So IA() was born. 
 
 {:refdef: style="text-align: center;"}
-![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/Subroutine-IA-06.SVG)
+![Example how IA function works](/images/Posts/2021/Tic-Tac-Toe/Subroutine-IA-06.SVG)
+*Example of how the IA() function calculates the score to place a token*
 {: refdef}
 
 
@@ -70,7 +70,7 @@ IA() gets the matrix board, and a computer's token (a 4 value) is placed whereve
 
 In other words, IA() draws the available lines to win on the board (using maths). Then it places the token at the cell with more lines crossing. End.  I haven't been able to win to this system. Fortunately for us, the world's fate between humanity and Skynet will not be decided in a Tic-Tac-Toe game.
 
-```Fortran
+```Fortran90
 program tt
 Implicit none
 Integer, dimension(3,3)::tablero=0
