@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tik Tak Toe in Fortran90. My first IA
+title: A Tic Tac Toe game engine in Fortran90. 
 draft: true
 tags: [Coding, Fortran90]
 ---
@@ -69,6 +69,8 @@ Subroutine MJ() was rubbish, but it had some part to play in it, for good or evi
 IA() gets the matrix board, and a computer's token (a 4 value) is placed wherever there is an empty space. Then it computes a new RCD vector to this matrix board. Any cell can be a participant of 0 to 2 victories, corners' cells can obtain a max score of 3, whilst the central cell could reach a max score of 4.
 
 In other words, IA() draws the available lines to win on the board (using maths). Then it places the token at the cell with more lines crossing. End.  I haven't been able to win to this system. Fortunately for us, the world's fate between humanity and Skynet will not be decided in a Tic-Tac-Toe game.
+
+To conclude, the aforementioned code.
 
 ```fortran
 program tt
