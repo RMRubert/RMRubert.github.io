@@ -8,7 +8,7 @@ tags: [Coding, Fortran90]
 ![Parrot - Machine learning algorith comparison meme](/images/Posts/2021/Tic-Tac-Toe/TTT-01.jpg){: .center-image }
 {: refdef}
 
-I was discussing with a friend the differences between a machine learning algorithm and a parrot. The conversation pivoted into artificial intelligence and how once I created a program able to play Tic-Tac-Toe.
+I was discussing with a friend the differences between a [machine learning algorithm and a parrot🦜](https://i.redd.it/6vme37tqvk671.jpg){:target="_blank"}. The conversation pivoted into artificial intelligence and how once I created a program able to play Tic-Tac-Toe.
 
 I thought it could be an exciting topic for this blog. So today's post is about how did I create a program that can play Tic-Tac-Toe. I did this program a long time ago. I was studying my first year of Civil Engineering for the module introduction to coding. Introduction to coding taught us how to code problems using our old friend Fortran90.
 
