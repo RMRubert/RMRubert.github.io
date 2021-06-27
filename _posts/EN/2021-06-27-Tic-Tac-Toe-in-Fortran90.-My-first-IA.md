@@ -70,7 +70,7 @@ IA() gets the matrix board, and a computer's token (a 4 value) is placed whereve
 
 In other words, IA() draws the available lines to win on the board (using maths). Then it places the token at the cell with more lines crossing. End.  I haven't been able to win to this system. Fortunately for us, the world's fate between humanity and Skynet will not be decided in a Tic-Tac-Toe game.
 
-```Fortran90
+```fortran
 program tt
 Implicit none
 Integer, dimension(3,3)::tablero=0
