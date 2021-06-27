@@ -22,20 +22,22 @@ I have tested the code and I can guarantee that gfortran, Fortran PowerStation 4
 
 {:refdef: style="text-align: center;"}
 ![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/Flowchart-02.SVG)
+Flowchart of how the game works.
 {: refdef}
 
 As the flow chart shows, the code is very simple:
- * it asks you if you want to start
- * in the human's turn, it asks to introduce a pair of integer separated by a comma: row, column
- * in the computer's turn,
-  * it tries to win, if not
-  * it tries not to lose, if not
-computes the best position and place the token there
++ it asks you if you want to start
++ in the human's turn, it asks to introduce a pair of integer separated by a comma: row, column
++ in the computer's turn,
+  - it tries to win, if not
+  - it tries not to lose, if not
+  - computes the best position and place the token there
 
 Human always plays with circles, the computer plays with crosses. The board is formed by a 3x3 array of integers. If there is no token in a position, that position contains a 0. If the human places a token, the position's value is updated with a 1. If it is the computer that places a token, that position's value is updated with 4.
 
 {:refdef: style="text-align: center;"}
 ![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/RCD-System-03.SVG)
+Example of how the algorithm sees the board and the RCD vector.
 {: refdef}
 
 Why ones and fours? As the board is 3x3, I can compute the sum of every row (S1, S2, S3), every column (S4, S5, S6) and every diagonal (S7, S8). We call this vector with the Sums of every Row-Col-Diag, RCD sum vector. RCD is called SS (Sumas del Sistema) in the code, remind the code is in Spanish. RCD is what the computer uses to know how the game is going.
@@ -44,6 +46,7 @@ If at the computer's turn, any RCD value (S1 - S8) is eight. The algorithm sees 
 
 {:refdef: style="text-align: center;"}
 ![Musicbee Screenshot](/images/Posts/2021/Tic-Tac-Toe/RCD-System-Win-04.SVG)
+Algorithm seeing that there is an imminent win at S5 (Column 2)
 {: refdef}
 
 What is more tricky is to figure out where to place when there is no possibility to immediately win or lose. If you take the time to read the code (which nobody will do because ain't nobody got time for that) you will notice that I created two subroutines to deal with this situation. You could use one or another by commenting/uncommenting lines 197/198.
@@ -70,7 +73,7 @@ IA() gets the matrix board, and a computer's token (a 4 value) is placed whereve
 
 In other words, IA() draws the available lines to win on the board (using maths). Then it places the token at the cell with more lines crossing. End.  I haven't been able to win to this system. Fortunately for us, the world's fate between humanity and Skynet will not be decided in a Tic-Tac-Toe game.
 
-```Fortran
+```Fortran90
 program tt
 Implicit none
 Integer, dimension(3,3)::tablero=0
