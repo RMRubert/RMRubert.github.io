@@ -269,8 +269,8 @@ Subroutine pc(T,L)
     L=ganar(t,nl)
   else
     !Nos toca pensar la mejor jugada
-    L=MJ(T,SS) !Método Antiguo
-    !L=ia(T,SS) !El sistema moderno
+    !L=MJ(T,SS) !Metodo Antiguo
+    L=ia(T,SS) !El sistema moderno
   endif
 endsubroutine
   !*************!
